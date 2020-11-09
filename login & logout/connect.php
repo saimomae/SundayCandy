@@ -1,4 +1,6 @@
 <?php
-$con= mysqli_connect("localhost","root","","sundaycandy") or die("Error: " . mysqli_error($con));
-mysqli_query($con, "SET NAMES 'utf8' "); 
-?>
+$mysqli = new mysqli('localhost','root','','sundaycandy');
+   if($mysqli->connect_errno){
+      echo $mysqli->connect_errno.": ".$mysqli->connect_error;
+   }
+ ?>

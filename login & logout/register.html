@@ -37,28 +37,57 @@
     <section class="p-10 md-py-10">
         <div class="w-100pc md-w-70pc mx-auto py-10">
             <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                Wellcome <span class="border-b bc-indigo bw-4"> back</span></h2>
+                Sign-up for the <span class="border-b bc-indigo bw-4"> ultimate</span> movies experience </h2>
         </div>
     </section>
 
     <!-- subscribe -->
     <section class="p-10 md-p-l5">
+      <form action="add_register.php" method="post">
         <div class="br-6 bg-indigo-lightest-10 p-5 md-p-l5 flex flex-wrap md-justify-between md-items-center">
-            <div class="w-100pc md-w-50pc md-items-center"> <!Username>
+            <div class="w-100pc md-w-50pc md-items-center"> <!First Name>
                 <div class="flex my-5 p-l1">
-                    <input type="text"
+                    <input type="text" name="first_name"
                         class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="First Name">
+                        placeholder="First Name" >
                 </div>
             </div>
-            <div class="w-100pc md-w-50pc md-items-center"> <!Password>
+            <div class="w-100pc md-w-50pc md-items-center"> <!Last Name>
                 <div class="flex my-5 p-l1">
-                    <input type="text"
+                    <input type="text" name="last_name"
                         class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
                         placeholder="Last Name">
                 </div>
             </div>
-            <button class="button-lg bg-indigo indigo-lightest fw-300 fs-s3 br-l-0">Login</button>
+            <div class="w-100pc md-w-50pc p-l1"> <!Email>
+                <div class="flex my-5">
+                    <input type="text" name="email"
+                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
+                        placeholder="Email">
+                </div>
+            </div>
+            <div class="w-100pc md-w-50pc p-l1"> <!Username>
+                <div class="flex my-5">
+                    <input type="text" name="username"
+                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
+                        placeholder="Username">
+                </div>
+            </div>
+            <div class="w-100pc md-w-50pc p-l1"> <!Password>
+                <div class="flex my-5">
+                    <input type="text" name="passwd"
+                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
+                        placeholder="Password">
+                </div>
+            </div>
+            <div class="w-100pc md-w-50pc p-l1"> <!phonenumber>
+                <div class="flex my-5">
+                    <input type="text" name="phone_number"
+                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
+                        placeholder="Phone number">
+                </div>
+            </div>
+            <button input type="submit" name="sub" class="button-lg bg-indigo indigo-lightest fw-300 fs-s3 br-l-0">Get Started</button>
         </div>
     </section>
 

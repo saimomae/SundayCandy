@@ -17,7 +17,7 @@
         <div class="flex justify-between">
             <a href="index.html" class="flex items-center p-2 mr-4 no-underline">
                 <img class="max-h-l2 w-auto" src="assets/images/logo.png" />
-                <h1 style="color:white;">SundayCand</h1>
+                <h1 style="color:white;">SundayCandy</h1>
             </a>
             <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
                 class="flex items-center ml-auto md-hidden indigo-lighter opacity-50 hover-opacity-100 ease-300 p-1 m-3">
@@ -37,49 +37,29 @@
     <section class="p-10 md-py-10">
         <div class="w-100pc md-w-70pc mx-auto py-10">
             <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                Sign-up for the <span class="border-b bc-indigo bw-4"> ultimate</span> movies experience </h2>
+                Wellcome <span class="border-b bc-indigo bw-4"> back</span></h2>
         </div>
     </section>
 
     <!-- subscribe -->
     <section class="p-10 md-p-l5">
+      <form action="chacklogin.php" method="post">
         <div class="br-6 bg-indigo-lightest-10 p-5 md-p-l5 flex flex-wrap md-justify-between md-items-center">
-            <div class="w-100pc md-w-50pc md-items-center"> <!First Name>
+            <div class="w-100pc md-w-50pc md-items-center"> <!Username>
                 <div class="flex my-5 p-l1">
-                    <input type="text"
+                    <input type="text" name="username"
                         class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="First Name">
+                        placeholder="Username">
                 </div>
             </div>
-            <div class="w-100pc md-w-50pc md-items-center"> <!Last Name>
+            <div class="w-100pc md-w-50pc md-items-center"> <!Password>
                 <div class="flex my-5 p-l1">
-                    <input type="text"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="Last Name">
-                </div>
-            </div>
-            <div class="w-100pc md-w-50pc p-l1"> <!Email>
-                <div class="flex my-5">
-                    <input type="text"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="Email">
-                </div>
-            </div>
-            <div class="w-100pc md-w-50pc p-l1"> <!Password>
-                <div class="flex my-5">
-                    <input type="text"
+                    <input type="text" name="passwd"
                         class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
                         placeholder="Password">
                 </div>
             </div>
-            <div class="w-100pc md-w-50pc p-l1"> <!phone number>
-                <div class="flex my-5">
-                    <input type="text"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="Password">
-                </div>
-            </div>
-            <button class="button-lg bg-indigo indigo-lightest fw-300 fs-s3 br-l-0">Get Started</button>
+            <button class="button-lg bg-indigo indigo-lightest fw-300 fs-s3 br-l-0">Login</button>
         </div>
     </section>
 
