@@ -14,7 +14,7 @@ $result = $mysqli->query($q);
   // echo "Login Sucessfully";
 session_start();
 $_SESSION['username'] = $username;
-header("Location: \interface\index.html");
+header("Location: http://localhost/SundayCandy/interface/");
 
 }
 else {
