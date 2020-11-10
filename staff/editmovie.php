@@ -82,6 +82,7 @@
                     <td><?=$row['price_buy']?></td>
                     <td><?=$row['g_id']?></td>
                     <td><img src="delete-24.png" width="24" height="24"></td>
+                    <td><img src="edit-11.png" width="24" height="24"></td>
                 <br>
           </div>
 				<?php } ?>
