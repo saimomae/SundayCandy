@@ -82,7 +82,7 @@
                     <td><?=$row['price_buy']?></td>
                     <td><?=$row['g_id']?></td>
                     <td><a href ='delinfo.php?id=<?=$row['m_id']?>'><img src="delete-24.png" width="24" height="24"></td>
-                    <td><a href ='editinfo.php?id=<?=$row['m_id']?>'><img src="edit-11.png" width="24" height="24"></td>
+                    <td><a href ='editinfo_Momae.php?id=<?=$row['m_id']?>'><img src="edit-11.png" width="24" height="24"></td>
                 <br>
           </div>
 				<?php } ?>
@@ -91,7 +91,7 @@
   			// count the no. of entries
   			$count=$result ->num_rows;
   					echo "<tr><td colspan = 6 align = right> Total $count
-  						records</td></tr>";
+  						movies</td></tr>";
   					$result ->free();
   			?>
       </div>
