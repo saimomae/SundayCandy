@@ -1,30 +1,39 @@
 <?php
+session_start();
 require_once('connect.php');
-//
-// $q= 'SELECT price_buy, price_rent FROM movie WHERE m_id ="1";';
-// if($result=$mysqli->query($q)){
-//   while($row=$result->fetch_array()){
-//     echo '<option value="'.$row[0].'">'.$row[1].'</option>';
-//   }
-// }else{
-//   echo 'Query error: '.$mysqli->error;
-// }
 
-// movie_view = $_SESSION['movie'];
+
 if(isset($_POST['sub_buy'])) {
-  $status = buy;
+  $status = Buy;
   $price =  price_buy;
+
+  $q= 'SELECT price_buy FROM movie WHERE m_id ="1";';
+  if($result=$mysqli->query($q)){
+    while($row=$result->fetch_array()){
+      $price=$row[price_buy];
+    }
+  }else{
+    echo 'Query error: '.$mysqli->error;
+  }
+
 }
 elseif (isset($_POST['sub_rent'])) {
-  $status = rent;
+  $status = Rent;
   $price = price_rent;
+
+  $q= 'SELECT price_rent FROM movie WHERE m_id ="1";';
+  if($result=$mysqli->query($q)){
+    while($row=$result->fetch_array()){
+      $price=$row[price_rent];
+    }
+  }else{
+    echo 'Query error: '.$mysqli->error;
+  }
+
 }
 
-session_start();
-$_SESSION['status'] = $status;
-$_SESSION['price'] = $price;
-
-
+$_SESSION['price']   = $price;
+$_SESSION['status']   = $status;
 header("Location: Purchase.php");
 
 ?>

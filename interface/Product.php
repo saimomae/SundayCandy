@@ -1,3 +1,8 @@
+<?php require_once('connect.php');
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,11 +105,26 @@
                     <img class="w-100pc" src="assets/images/tenet.reg.ar_480x.progressive.jpg" alt="">
                 </a>
             </div>
+
+            <!Getprice>
+            <?php
+            $movie_id = $_SESSION['movie_id'];
+            $q= 'SELECT price_buy,price_rent FROM movie WHERE m_id = "'.$movie_id.'"';
+            if($result=$mysqli->query($q)){
+              while($row=$result->fetch_array()){
+                $price_buy=$row[price_buy];
+                $price_rent=$row[price_rent];
+              }
+            }else{
+              echo 'Query error: '.$mysqli->error;
+            }
+            ?>
+
             <div class="w-100pc md-w-25pc">
                 <div class="m-3 p-5 br-8 bg-indigo-lightest-10 overflow-hidden">
                     <div class="p-3">
                         <h3 class="indigo">Buy</h3>
-                        <div class="white flex items-center">$<span class="fs-l5 lh-1">500</span></div>
+                        <div class="white flex items-center">$<span class="fs-l5 lh-1"><?php echo $price_buy; ?></span></div>
                     </div>
                     <div class="p-3 indigo-lightest fw-400 fs-s1 lh-5">
                         <div>
@@ -121,7 +141,7 @@
                 <div class="m-3 p-5 br-8 bg-white overflow-hidden">
                     <div class="p-3">
                         <h3 class="indigo">Rent</h3>
-                        <div class="black flex items-center">$<span class="fs-l5 lh-1">250</span></div>
+                        <div class="black flex items-center">$<span class="fs-l5 lh-1"><?php echo $price_rent; ?></span></div>
                     </div>
                     <div class="p-3 black fw-400 fs-s1 lh-5">
                         <div>

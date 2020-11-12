@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php require_once('connect.php');
+session_start();
+$status = $_SESSION['status'];
+$price = $_SESSION['price'];
+?>
 <html lang="en">
 
 <head>
@@ -49,10 +54,9 @@
         <div class="white fw-600 fs-m1 opacity-100 my-5">
         <p2 class="white fw-800 fs-13 my-5">Tenet</p2>
           <br/><span class="white indigo-light opacity-70 fs-m2 lh-1">Status:</span> <?php
-          // $status = "buy";
-          require_once('connect.php');
-          $status = $_GET['status']; ?>
-          <br/><span class="white indigo-light opacity-70 fs-m2 lh-1">Price:</span> <?= require_once('connect.php'); $price ?>
+          echo $status; ?>
+          <br/><span class="white indigo-light opacity-70 fs-m2 lh-1">Price:</span> <?php
+          echo $price;  ?>
           <br/><br/><hr style="width:50%;text-align:left;margin-left:0;">
         </div>
         <br>
