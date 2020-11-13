@@ -1,19 +1,3 @@
-<?php
-session_start();
-require_once('connect.php');
-//Get user firstname
-$username = $_SESSION['username'];
-
-  $q= 'SELECT username,FName FROM user WHERE username = "'.$username.'"';
-if($result=$mysqli->query($q)){
-while($row=$result->fetch_array()){
-  $UserFirstname=$row['FName'];
-  }
-}
-else{
-echo 'Query error: '.$mysqli->error;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,88 +36,27 @@ echo 'Query error: '.$mysqli->error;
         </div>
     </nav>
 
-    <!-- Home/For You -->
-    <div class="w-100pc md-w-50pc mx-auto py-5 ">
-        <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-          Good Afternoon, <span class="border-b bc-indigo bw-4"> <?php echo $UserFirstname ?> </span></h2> <!User FName>
-    </div>
-    <!-- <section id="home" class="min-h-100vh flex justify-center items-center">
-      <div class="w-100pc md-w-33pc p-10">
-          <a href="#" class="block no-underline p-5 br-8 hover-bg-indigo-lightest-10 hover-scale-up-1 ease-300">
-              <img class="w-120pc" src="assets/images/Goodfellas_480x.progressive.jpg" alt="">
-          </a>
-      </div>
-        <div class="mx-5 md-mx-l3">
-            <div class="inline-block br-round bg-indigo-30 indigo-lightest p-2 fs-s2 mb-5">
-                <div class="inline-block bg-indigo indigo-lightest br-round px-3 py-1 mr-3 fs-s3">There are 5</div>
-                movies you didn't catch up yet...
-            </div>
-            <div>
-                <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900 ">Continue Watching: <br />Goodfellas</h1>
-            </div>
-        </div>
-    </section> -->
-
     <!-- Libary -->
+
+
     <section id="Libary" class="p-0 md-p-5">
+
           <div class="flex flex-wrap">
             <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900 ">Your <span class="border-b bc-indigo bw-4">Collection</span></h1><hr style="width:50%;text-align:left;margin-left:0;visibility: hidden">
+            <?php  for ($i=0; $i < 5; $i++) {?>
             <div class="w-100pc md-w-33pc p-10">
                 <a href="Product.php" class="block no-underline p-5 br-8 hover-bg-indigo-lightest-10 hover-scale-up-1 ease-300">
                     <img class="w-100pc" src="assets/images/tenet.reg.ar_480x.progressive.jpg" alt="">
                     <p class="fw-600 white fs-m3 mt-3">
-                        TENET
+                        TENNET
                     </p>
                     <div class="indigo fs-s3 italic after-arrow-right my-4">See More</div>
                 </a>
             </div>
-              <div class="w-100pc md-w-33pc p-10">
-                  <a href="#" class="block no-underline p-5 br-8 hover-bg-indigo-lightest-10 hover-scale-up-1 ease-300">
-                      <img class="w-100pc" src="assets/images/Lalaland_480x.progressive.jpg" alt="">
-                      <p class="fw-600 white fs-m3 mt-3">
-                        La La Land
-                    </p>
-                    <div class="indigo fs-s3 italic after-arrow-right my-4">See More</div>
-                </a>
-            </div>
-            <div class="w-100pc md-w-33pc p-10">
-                <a href="#" class="block no-underline p-5 br-8 hover-bg-indigo-lightest-10 hover-scale-up-1 ease-300">
-                    <img class="w-100pc" src="assets/images/1917.125785.ar_480x.progressive.jpg" alt="">
-                    <p class="fw-600 white fs-m3 mt-3">
-                        1917
-                    </p>
-                    <div class="indigo fs-s3 italic after-arrow-right my-4">See More</div>
-                </a>
-            </div>
-            <div class="w-100pc md-w-33pc p-10">
-                <a href="#" class="block no-underline p-5 br-8 hover-bg-indigo-lightest-10 hover-scale-up-1 ease-300">
-                    <img class="w-100pc" src="assets/images/Inception_480x.progressive.jpg" alt="">
-                    <p class="fw-600 white fs-m3 mt-3">
-                        Inception
-                    </p>
-                    <div class="indigo fs-s3 italic after-arrow-right my-4">See More</div>
-                </a>
-            </div>
-            <div class="w-100pc md-w-33pc p-10">
-                <a href="#" class="block no-underline p-5 br-8 hover-bg-indigo-lightest-10 hover-scale-up-1 ease-300">
-                    <img class="w-100pc" src="assets/images/PitchPerfect2_480x.progressive.jpg" alt="">
-                    <p class="fw-600 white fs-m3 mt-3">
-                        Pitch Perfect 2
-                    </p>
-                    <div class="indigo fs-s3 italic after-arrow-right my-4">See More</div>
-                </a>
-            </div>
-            <div class="w-100pc md-w-33pc p-10">
-                <a href="#" class="block no-underline p-5 br-8 hover-bg-indigo-lightest-10 hover-scale-up-1 ease-300">
-                    <img class="w-100pc" src="assets/images/Spotlight_480x.progressive.jpg" alt="">
-                    <p class="fw-600 white fs-m3 mt-3">
-                        Spotlight
-                    </p>
-                    <div class="indigo fs-s3 italic after-arrow-right my-4">See More</div>
-                </a>
-            </div>
-        </div>
+          <?php}
+          ?>
     </section>
+
 
     <!-- features/store -->
     <section id="Store" class="p-0 md-p-5">
@@ -230,6 +153,10 @@ echo 'Query error: '.$mysqli->error;
 
     <!-- Account -->
     <section id="Account" class="p-10 md-py-10">
+        <div class="w-100pc md-w-70pc mx-auto py-10">
+            <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
+                Good after noon, <span class="border-b bc-indigo bw-4"> Ravipa</span></h2> <!User FName>
+        </div>
     </section>
 
     <!-- product options/sub auccount -->
@@ -248,7 +175,8 @@ echo 'Query error: '.$mysqli->error;
                     <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">
                         Change Password</div>
                     <div class="indigo-lightest fw-600 fs-m1"><span class="opacity-30"> Reset your password here</span> </div>
-                    <a href="#" class="mt-10 button bg-black fs-s3 white no-underline">Change Password</a> <!Change Password Button>
+                    <a href="#" class="mt-10 button bg-black fs-s3 white no-underline">Change Password</a>
+
                 </div>
             </div>
         </div>

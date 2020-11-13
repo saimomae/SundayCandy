@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php require_once('connect.php');
+<?php
+require_once('connect.php');
 session_start();
 $status = $_SESSION['status'];
 $price = $_SESSION['price'];
@@ -39,32 +40,31 @@ $price = $_SESSION['price'];
     </nav>
 
 <!-- Purchase -->
-
     <section class=" md-p-l5 flex flex-wrap justify-center items-center">
-      <form action="payment.php" method="post">
         <div class="md-w-75pc">
             <h2 class="white fs-l3 fw-900 lh-3 border-b bc-indigo bw-4">Check Out</h2>
             <p class="indigo-lightest fw-600 fs-m1 opacity-50">Scan the QR to make a payment</p>
         </div>
         <div class="w-100pc md-w-33pc p-10">
             <a class="block no-underline p-5 br-8 ">
-                <img class="w-80pc" src="assets/images/QR-code-example.jpg" alt="">
+                <img class="w-80pc" src="QR-code-example.jpg" alt="">
             </a>
         </div>
         <div class="white fw-600 fs-m1 opacity-100 my-5">
         <p2 class="white fw-800 fs-13 my-5">Tenet</p2>
-          <br/><span class="white indigo-light opacity-70 fs-m2 lh-1">Status:</span> <?php
-          echo $status; ?>
-          <br/><span class="white indigo-light opacity-70 fs-m2 lh-1">Price:</span> <?php
-          echo $price;  ?>
+          <br/><span class="white indigo-light opacity-70 fs-m2 lh-1">Status:</span> <?php echo $status;?>
+          <br/><span class="white indigo-light opacity-70 fs-m2 lh-1">Price:</span> <?php echo $price;?>
           <br/><br/><hr style="width:50%;text-align:left;margin-left:0;">
         </div>
         <br>
         <div class="p-5">
-            <a href="index.html"><button class="button full bg-indigo white hover-opacity-100 hover-scale-up-1 ease-300">Confirm</button></a>
+          <form action="confirm.php" method="post">
+            <button input type="submit" name="checkout" class="button full bg-indigo white hover-opacity-100 hover-scale-up-1 ease-300">Confirm</button>
         </div>
 
 </section>
+
+
 
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -1,7 +1,4 @@
-<?php require_once('connect.php');
-session_start();
-
-?>
+<?php require_once('connect.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,14 +36,14 @@ session_start();
     </nav>
 
       <!-- pricing/produvt -->
-    <section id="Product">
+    <section id="Product"> <!Edit HERE!>
         <form action="payment.php" method="post">
         <div class="p-10 flex flex-wrap justify-center items-center">
             <div class="w-100pc md-w-50pc">
                 <div class="p-5">
-                    <h4 class="white fw-800 fs-l3 mb-5">Tenet</h4>
+                    <h4 class="white fw-800 fs-l3 mb-5">Tenet</h4> <!Movie Title!>
                     <div class="indigo-lightest fw-600 fs-m1 opacity-70">A secret agent embarks on a dangerous, time-bending mission to
-                      prevent the start of World War III.<br/>
+                      prevent the start of World War III.<br/> <!Movie Decription!>
                       <br/><span class="white indigo-light fs-m2 lh-1">Release date:</span> August 27, 2020 (Thailand)
                       <br/><span class="white indigo-light fs-m2 lh-1">Director:</span> Christopher Nolan
                       <br/><span class="white indigo-light fs-m2 lh-1">Budget:</span> 205 million USD
@@ -108,8 +105,7 @@ session_start();
 
             <!Getprice>
             <?php
-            $movie_id = $_SESSION['movie_id'];
-            $q= 'SELECT price_buy,price_rent FROM movie WHERE m_id = "'.$movie_id.'"';
+            $q= 'SELECT price_buy,price_rent FROM movie WHERE m_id = 1';
             if($result=$mysqli->query($q)){
               while($row=$result->fetch_array()){
                 $price_buy=$row[price_buy];
@@ -198,29 +194,22 @@ session_start();
     </section>
 
     <!-- testimonials -->
+
     <section class="p-10 md-p-l5">
         <div id="slider-2">
             <div class="px-3">
                 <div class="p-8 br-8 bg-indigo-lightest-10 relative">
-                    <p class="fw-600 fs-m1 indigo-lightest opacity-80 italic ls-wider">Some Movies poster </p>
-
-                </div>
-            </div>
-            <div class="px-3">
-                <div class="p-8 br-8 bg-indigo-lightest-10 relative">
-                    <p class="fw-600 fs-m1 indigo-lightest opacity-80 italic ls-wider">Some Movies poster </p>
-
-                </div>
-            </div>
-            <div class="px-3">
-                <div class="p-8 br-8 bg-indigo-lightest-10 relative">
-                    <p class="fw-600 fs-m1 indigo-lightest opacity-80 italic ls-wider">Some Movies poster </p>
-
-                </div>
-            </div>
-            <div class="px-3">
-                <div class="p-8 br-8 bg-indigo-lightest-10 relative">
-                    <p class="fw-600 fs-m1 indigo-lightest opacity-80 italic ls-wider">Some Movies poster </p>
+                    <p class="fw-600 fs-m3 indigo-lightest opacity-80 italic ls-wider "><?php
+                    $q= 'SELECT g_id,title FROM movie WHERE g_id = 1;';
+                    if($result=$mysqli->query($q)){
+                      while($row=$result->fetch_array()){
+                        echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+                        echo '<br>';
+                      }
+                    }else{
+                      echo 'Query error: '.$mysqli->error;
+                    }
+                    ?></p>
 
                 </div>
             </div>

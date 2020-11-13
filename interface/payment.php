@@ -2,11 +2,10 @@
 session_start();
 require_once('connect.php');
 
-
+//If press buy
 if(isset($_POST['sub_buy'])) {
   $status = Buy;
   $price =  price_buy;
-
   $q= 'SELECT price_buy FROM movie WHERE m_id ="1";';
   if($result=$mysqli->query($q)){
     while($row=$result->fetch_array()){
@@ -15,8 +14,10 @@ if(isset($_POST['sub_buy'])) {
   }else{
     echo 'Query error: '.$mysqli->error;
   }
-
+header("Location: Purchase.php");
 }
+
+//If press rent
 elseif (isset($_POST['sub_rent'])) {
   $status = Rent;
   $price = price_rent;
@@ -29,11 +30,11 @@ elseif (isset($_POST['sub_rent'])) {
   }else{
     echo 'Query error: '.$mysqli->error;
   }
-
+header("Location: Purchase.php");
 }
 
 $_SESSION['price']   = $price;
 $_SESSION['status']   = $status;
-header("Location: Purchase.php");
+
 
 ?>
