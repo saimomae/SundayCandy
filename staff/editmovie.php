@@ -81,8 +81,8 @@
                     <td><?=$row['price_rent']?></td>
                     <td><?=$row['price_buy']?></td>
                     <td><?=$row['g_id']?></td>
-                    <td><a href ='delinfo.php?id=<?=$row['m_id']?>'><img src="delete-24.png" width="24" height="24"></td>
-                    <td><a href ='editinfo_Momae.php?id=<?=$row['m_id']?>'><img src="edit-11.png" width="24" height="24"></td>
+                    <td><a href ='delinfo.php?id=<?=$row['m_id']?>'><img src="delete-24.png" width="24" height="24"></a></td>
+                    <td><a href ='editinfo.php?id=<?=$row['m_id']?>'><img src="edit-11.png" width="24" height="24"></a></td>
                 <br>
           </div>
 				<?php } ?>

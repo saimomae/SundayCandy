@@ -14,11 +14,11 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
 
-<body class="bg-black muli">
-    <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
+<body class="bg-slategray-darkest muli">
+    <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-slategray-darkest">
         <div class="flex justify-between">
-            <a href="index.html" class="flex items-center p-2 mr-4 no-underline">
-                <img class="max-h-l2 w-auto" src="assets/images/logo.png" />
+            <a href="index.php" class="flex items-center p-2 mr-4 no-underline">
+                <img class="max-h-l2 w-auto" src="images/logo.png" />
                 <h1 style="color:white;">SundayCandy</h1>
             </a>
             <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
@@ -99,7 +99,7 @@
             </div>
             <div class="w-100pc md-w-33pc p-10">
                 <a class="block no-underline p-5 br-8 ">
-                    <img class="w-100pc" src="assets/images/tenet.reg.ar_480x.progressive.jpg" alt="">
+                    <img class="w-100pc" src="images/tenet.reg.ar_480x.progressive.jpg" alt="">
                 </a>
             </div>
 
@@ -108,8 +108,8 @@
             $q= 'SELECT price_buy,price_rent FROM movie WHERE m_id = 1';
             if($result=$mysqli->query($q)){
               while($row=$result->fetch_array()){
-                $price_buy=$row[price_buy];
-                $price_rent=$row[price_rent];
+                $price_buy=$row['price_buy'];
+                $price_rent=$row['price_rent'];
               }
             }else{
               echo 'Query error: '.$mysqli->error;
@@ -152,39 +152,6 @@
         </div>
     </section>
 
-    <!-- slider -->
-    <section class="relative bg-indigo-lightest-10">
-        <div id="slider-1">
-            <div class="p-10 md-p-l10 flex justify-center items-center flex-column text-center">
-                <h2 class="white fs-l3 fw-900">"We Live In A Twilight World. There Are No Friends At Dusk."</h2>
-                <p class="indigo-lightest fw-600 fs-m1 opacity-30 my-5">This quote is one said many times throughout the film,
-                  and is a secret code phrase used to gain access and makes sure the characters are talking to the right people.
-                  It is also quite funny that Twilight gets mentioned in a Robert Pattinson movie.</p>
-            </div>
-            <div class="p-10 md-p-l10 flex justify-center items-center flex-column text-center">
-                <h2 class="white fs-l3 fw-900">"I'll See You In The Beginning, Friend."</h2>
-                <p class="indigo-lightest fw-600 fs-m1 opacity-30 my-5">The climax of the movie is breathtaking and extremely
-                  overwhelming, dishing out hard to comprehend visuals, an overload of auditory stimulation,
-                  and a bunch of information at the end.</p>
-            </div>
-            <div class="p-10 md-p-l10 flex justify-center items-center flex-column text-center">
-                <h2 class="white fs-l3 fw-900">"What's Happened, Happened, It's An Expression
-                  Of Faith In The Mechanics Of The World, It's Not An Excuse For Doing Nothing."</h2>
-                <p class="indigo-lightest fw-600 fs-m1 opacity-30 my-5">That is the case as it pertains to Neil, who raises many
-                  questions with his time loop, and who says this quote to the Protagonist when he inquires about changing
-                  the course of time and the effects of doing so. </p>
-            </div>
-        </div>
-        <ul class="absolute list-none w-100pc flex justify-between top-50pc">
-            <li><button
-                    class="prev ml-10 br-round border-indigo-lightest indigo-lightest  bg-transparent flex justify-center items-center p-2 focus-indigo-lighter outline-none"><i
-                        data-feather="chevron-left"></i></button></li>
-            <li><button
-                    class="next mr-10 br-round border-indigo-lightest indigo-lightest  bg-transparent flex justify-center items-center p-2  focus-indigo-lighter outline-none"><i
-                        data-feather="chevron-right"></i></button></li>
-        </ul>
-    </section>
-
     <!-- big text -->
     <section class="p-10 md-py-10">
         <div class="w-100pc md-w-70pc mx-auto py-10">
@@ -193,14 +160,14 @@
         </div>
     </section>
 
-    <!-- testimonials -->
+    <!-More Like->
 
     <section class="p-10 md-p-l5">
         <div id="slider-2">
-            <div class="px-3">
+            <div class="px-3 w-100pc md-w-25pc">
                 <div class="p-8 br-8 bg-indigo-lightest-10 relative">
                     <p class="fw-600 fs-m3 indigo-lightest opacity-80 italic ls-wider "><?php
-                    $q= 'SELECT g_id,title FROM movie WHERE g_id = 1;';
+                    $q= 'SELECT g_id,title FROM movie WHERE g_id = 1 AND title !="Tenet"; ';
                     if($result=$mysqli->query($q)){
                       while($row=$result->fetch_array()){
                         echo '<option value="'.$row[0].'">'.$row[1].'</option>';
@@ -210,7 +177,6 @@
                       echo 'Query error: '.$mysqli->error;
                     }
                     ?></p>
-
                 </div>
             </div>
         </div>
@@ -222,8 +188,7 @@
             <div class="md-w-25pc mb-10">
                 <img src="assets/images/logo.png" class="w-l5" alt="">
                 <div class="white opacity-70 fs-s2 mt-4 md-pr-10">
-                    <p>Soluta voluptate et optio. Eos quasi impedit sapiente aliquid eius eligendi at. Necessitatibus
-                        magni et sed quod quas minima.</p>
+                    <p>i smoke when i think too much about you, then i think too much about you when i smoke</p>
                     <br>
                     <p>Soluta voluptate et optio. Eos quasi impedit sapiente aliquid eius eligendi at. Necessitatibus
                         magni et sed quod quas minima.</p>

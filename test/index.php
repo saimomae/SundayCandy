@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 	require_once('connect.php'); ?>
 
 
 
@@ -37,24 +38,29 @@
     </nav>
 
     <!-- Libary -->
-
+    <!select movies>
+    <?php
+            $q="SELECT m_id, title FROM movie";
+            $result = $mysqli->query($q);
+            while($row=$result->fetch_array()){
+              $title=$row['title'];
+              $m_id=$row['m_id'];
+            }?>
 
     <section id="Libary" class="p-0 md-p-5">
-
           <div class="flex flex-wrap">
-            <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900 ">Your <span class="border-b bc-indigo bw-4">Collection</span></h1><hr style="width:50%;text-align:left;margin-left:0;visibility: hidden">
-            <?php  for ($i=0; $i < 5; $i++) {?>
+            <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900 ">All <span class="border-b bc-yellow-light bw-4"> Movies</span></h1><hr style="width:50%;text-align:left;margin-left:0;visibility: hidden">
+            <?php for ($x = 0; $x <= 8; $x++)  {?> <!loop doop>
             <div class="w-100pc md-w-33pc p-10">
                 <a href="Product.php" class="block no-underline p-5 br-8 hover-bg-indigo-lightest-10 hover-scale-up-1 ease-300">
-                    <img class="w-100pc" src="assets/images/tenet.reg.ar_480x.progressive.jpg" alt="">
+                    <img class="w-100pc" src="images/tenet.reg.ar_480x.progressive.jpg" alt="">
                     <p class="fw-600 white fs-m3 mt-3">
-                        TENNET
+                        <?php echo $title;?>
                     </p>
-                    <div class="indigo fs-s3 italic after-arrow-right my-4">See More</div>
+                    <div class="yellow-light fs-s3 italic after-arrow-right my-4">See More</div>
                 </a>
             </div>
-          <?php}
-          ?>
+            <?php } ?>
     </section>
 
 
@@ -68,7 +74,7 @@
                   <p class="fw-600 white fs-m3 mt-3">
                       Dunkirk
                   </p>
-                  <div class="indigo fs-s3 italic after-arrow-right my-4">See More</div>
+                  <div class="yellow fs-s3 italic after-arrow-right my-4">See More</div>
               </a>
           </div>
           <div class="w-100pc md-w-33pc p-10">
