@@ -1,4 +1,7 @@
-<?php require_once('connect.php');?>
+<?php require_once('connect.php');
+session_start();
+$title = $_SESSION['title'];
+$m_id = $_SESSION['m_id'];?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,26 +17,27 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
 
-<body class="bg-slategray-darkest muli">
-    <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-slategray-darkest">
-        <div class="flex justify-between">
-            <a href="index.php" class="flex items-center p-2 mr-4 no-underline">
-                <img class="max-h-l2 w-auto" src="images/logo.png" />
-                <h1 style="color:white;">SundayCandy</h1>
-            </a>
-            <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
-                class="flex items-center ml-auto md-hidden indigo-lighter opacity-50 hover-opacity-100 ease-300 p-1 m-3">
-                <i data-feather="menu"></i>
-            </a>
-        </div>
-        <div id="nav-items" class="hidden flex sm-w-100pc flex-column md-flex md-flex-row md-justify-end items-center">
-            <a href="#home" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">For You</a>
-            <a href="#blog" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">Libary</a>
-            <a href="#pricing" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">Account</a>
-            <a href="#blog" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">Sign-Out</a>
-            <a href="#" class="button bg-white black fw-600 no-underline mx-5">Search</a>
-        </div>
-    </nav>
+<body class="bg-black muli">
+  <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
+      <div class="flex justify-between">
+          <a href="#" class="flex items-center p-2 mr-4 no-underline">
+              <img class="max-h-l2 w-auto" src="images/logo.png" />
+              <h1 style="color:white;">SundayCandy</h1>
+
+          </a>
+          <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
+              class="flex items-center ml-auto md-hidden yellow-lighter opacity-50 hover-opacity-100 ease-300 p-1 m-3">
+              <i data-feather="menu"></i>
+          </a>
+      </div>
+      <div id="nav-items" class="hidden flex sm-w-100pc flex-column md-flex md-flex-row md-justify-end items-center">
+          <a href="index.php#Libary" class="fs-s1 mx-3 py-3 yellow-light no-underline hover-underline">Libary</a>
+          <a href="index.php#Store" class="fs-s1 mx-3 py-3 yellow-light no-underline hover-underline">Movies</a>
+          <a href="index.php#Account" class="fs-s1 mx-3 py-3 yellow-light no-underline hover-underline">Account</a>
+          <a href="http://localhost/SundayCandy/login%20&%20logout/logout.php" class="fs-s1 mx-3 py-3 yellow-light no-underline hover-underline">Sign-Out</a>
+          <a href="#" class="button bg-yellow black fw-600 no-underline mx-5">Search</a>
+      </div>
+  </nav>
 
       <!-- pricing/produvt -->
     <section id="Product"> <!Edit HERE!>
@@ -41,19 +45,19 @@
         <div class="p-10 flex flex-wrap justify-center items-center">
             <div class="w-100pc md-w-50pc">
                 <div class="p-5">
-                    <h4 class="white fw-800 fs-l3 mb-5">Tenet</h4> <!Movie Title!>
-                    <div class="indigo-lightest fw-600 fs-m1 opacity-70">A secret agent embarks on a dangerous, time-bending mission to
+                    <h4 class="white fw-800 fs-l3 mb-5"><?php echo "TENET"?></h4> <!Movie Title!>
+                    <div class="yellow-lightest fw-600 fs-m1 opacity-70">A secret agent embarks on a dangerous, time-bending mission to
                       prevent the start of World War III.<br/> <!Movie Decription!>
-                      <br/><span class="white indigo-light fs-m2 lh-1">Release date:</span> August 27, 2020 (Thailand)
-                      <br/><span class="white indigo-light fs-m2 lh-1">Director:</span> Christopher Nolan
-                      <br/><span class="white indigo-light fs-m2 lh-1">Budget:</span> 205 million USD
-                      <br/><span class="white indigo-light fs-m2 lh-1">Music composed by:</span> Ludwig Göransson
-                      <br/><span class="white indigo-light fs-m2 lh-1">Box office:</span> $307.1 million</div>
+                      <br/><span class="white yellow-light fs-m2 lh-1">Release date:</span> August 27, 2020 (Thailand)
+                      <br/><span class="white yellow-light fs-m2 lh-1">Director:</span> Christopher Nolan
+                      <br/><span class="white yellow-light fs-m2 lh-1">Budget:</span> 205 million USD
+                      <br/><span class="white yellow-light fs-m2 lh-1">Music composed by:</span> Ludwig Göransson
+                      <br/><span class="white yellow-light fs-m2 lh-1">Box office:</span> $307.1 million</div>
                       <div class="p-4 fs-m1 mt-5">
-                          <button class="button full bg-indigo white hover-opacity-100 hover-scale-up-1 ease-300">Add to Wishlist</button>
+                          <button class="button full bg-yellow black hover-opacity-100 hover-scale-up-1 ease-300">Add to Wishlist</button>
                       </div>
                     <h4 class="white fw-600 fs-m2 mt-10 opacity-50">Action / Thriller / Science Fiction</h4>
-                    <div class="flex indigo-lightest opacity-50">
+                    <div class="flex yellow-lightest opacity-50">
                         <div class="w-25pc">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 177.78 100" fill="currentColor">
                                 <path
@@ -117,14 +121,14 @@
             ?>
 
             <div class="w-100pc md-w-25pc">
-                <div class="m-3 p-5 br-8 bg-indigo-lightest-10 overflow-hidden">
+                <div class="m-3 p-5 br-8 bg-yellow-lightest-10 overflow-hidden">
                     <div class="p-3">
-                        <h3 class="indigo">Buy</h3>
+                        <h3 class="yellow">Buy</h3>
                         <div class="white flex items-center">$<span class="fs-l5 lh-1"><?php echo $price_buy; ?></span></div>
                     </div>
-                    <div class="p-3 indigo-lightest fw-400 fs-s1 lh-5">
+                    <div class="p-3 yellow-lightest fw-400 fs-s1 lh-5">
                         <div>
-                            <i class="h-3 indigo" stroke-width="4" data-feather="check"></i>
+                            <i class="h-3 yellow" stroke-width="4" data-feather="check"></i>
                             <span class="opacity-50">unlimit time</span>
                         </div>
                     </div>
@@ -136,16 +140,16 @@
             <div class="w-100pc md-w-25pc">
                 <div class="m-3 p-5 br-8 bg-white overflow-hidden">
                     <div class="p-3">
-                        <h3 class="indigo">Rent</h3>
+                        <h3 class="yellow-dark">Rent</h3>
                         <div class="black flex items-center">$<span class="fs-l5 lh-1"><?php echo $price_rent; ?></span></div>
                     </div>
                     <div class="p-3 black fw-400 fs-s1 lh-5">
                         <div>
-                            <i class="h-3 indigo" stroke-width="4" data-feather="check"></i>
+                            <i class="h-3 yellow" stroke-width="4" data-feather="check"></i>
                             <span class="opacity-50"> 7 days</span></div>
                     </div>
                     <div class="p-3">
-                        <button input type="submit" name="sub_rent" class="button full bg-indigo white hover-opacity-100 hover-scale-up-1 ease-300">RENT</button>
+                        <button input type="submit" name="sub_rent" class="button full bg-yellow black hover-opacity-100 hover-scale-up-1 ease-300">RENT</button>
                     </div>
                 </div>
             </div>
@@ -156,7 +160,7 @@
     <section class="p-10 md-py-10">
         <div class="w-100pc md-w-70pc mx-auto py-10">
             <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                More like, <span class="border-b bc-indigo bw-4"> TENET</span> </h2>
+                More like, <span class="border-b bc-yellow bw-4"> TENET</span> </h2>
         </div>
     </section>
 
@@ -165,8 +169,8 @@
     <section class="p-10 md-p-l5">
         <div id="slider-2">
             <div class="px-3 w-100pc md-w-25pc">
-                <div class="p-8 br-8 bg-indigo-lightest-10 relative">
-                    <p class="fw-600 fs-m3 indigo-lightest opacity-80 italic ls-wider "><?php
+                <div class="p-8 br-8 bg-yellow-lightest-10 relative">
+                    <p class="fw-600 fs-m3 yellow-lightest opacity-80 italic ls-wider "><?php
                     $q= 'SELECT g_id,title FROM movie WHERE g_id = 1 AND title !="Tenet"; ';
                     if($result=$mysqli->query($q)){
                       while($row=$result->fetch_array()){
@@ -183,7 +187,7 @@
     </section>
 
     <!-- footer -->
-    <footer class="p-5 md-p-l5 bg-indigo-lightest-10">
+    <footer class="p-5 md-p-l5 bg-yellow-lightest-10">
         <div class="flex flex-wrap">
             <div class="md-w-25pc mb-10">
                 <img src="assets/images/logo.png" class="w-l5" alt="">
@@ -239,16 +243,16 @@
             <div class="w-100pc md-w-25pc">
                 <div class="flex w-75pc md-w-100pc mx-auto">
                     <input type="text"
-                        class="input flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
+                        class="input flex-grow-1 bw-0 fw-200 bg-yellow-lightest-10 white ph-yellow-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
                         placeholder="Email Address">
-                    <button class="button bg-indigo indigo-lightest fw-300 fs-s3 br-l-0">Start</button>
+                    <button class="button bg-yellow yellow-lightest fw-300 fs-s3 br-l-0">Start</button>
                 </div>
                 <div class="flex justify-around my-8">
-                    <a href="#" class="relative p-5 bg-indigo br-round white hover-scale-up-1 ease-400"><i
+                    <a href="#" class="relative p-5 bg-yellow br-round white hover-scale-up-1 ease-400"><i
                             data-feather="twitter" class="absolute-center h-4"></i></a>
-                    <a href="#" class="relative p-5 bg-indigo br-round white hover-scale-up-1 ease-400"><i
+                    <a href="#" class="relative p-5 bg-yellow br-round white hover-scale-up-1 ease-400"><i
                             data-feather="facebook" class="absolute-center h-4"></i></a>
-                    <a href="#" class="relative p-5 bg-indigo br-round white hover-scale-up-1 ease-400"><i
+                    <a href="#" class="relative p-5 bg-yellow br-round white hover-scale-up-1 ease-400"><i
                             data-feather="instagram" class="absolute-center h-4"></i></a>
                 </div>
             </div>

@@ -14,7 +14,7 @@ if(isset($_POST['sub_buy'])) {
   }else{
     echo 'Query error: '.$mysqli->error;
   }
-header("Location: Purchase.php");
+header("Location: checkout.php");
 }
 
 //If press rent
@@ -30,7 +30,7 @@ elseif (isset($_POST['sub_rent'])) {
   }else{
     echo 'Query error: '.$mysqli->error;
   }
-header("Location: Purchase.php");
+header("Location: checkout.php");
 }
 
 $_SESSION['price']   = $price;

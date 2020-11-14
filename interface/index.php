@@ -29,8 +29,8 @@ echo 'Query error: '.$mysqli->error;
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
 
-<body class="bg-black muli">
-    <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
+<body class="pink-orange muli">
+    <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 pink-orange shadow-2"> <!navbar>
         <div class="flex justify-between">
             <a href="#" class="flex items-center p-2 mr-4 no-underline">
                 <img class="max-h-l2 w-auto" src="images/logo.png" />
@@ -131,21 +131,20 @@ echo 'Query error: '.$mysqli->error;
     <?php
             $q="SELECT m_id,title,poster  FROM movie";
             $result = $mysqli->query($q);
-            while($row=$result->fetch_array()){
-              $title=$row['title'];
-              $m_id=$row['m_id'];
-              $postersrc=$row['poster'];
-            }?>
+              //$m_id=$row['m_id'];
+              //$postersrc=$row['poster'];
+            ?>
 
     <section id="Store" class="p-0 md-p-5">
         <div class="flex flex-wrap">
           <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900 ">All Movies</h1><hr style="width:50%;text-align:left;margin-left:0;visibility: hidden">
-          <?php for ($x = 0; $x <= 8; $x++)  {?> <!loop doop>
+          <?php while($row=$result->fetch_array()){
+            //$_SESSION['m_id']   = $m_id;?> <!loop doop>
           <div class="w-100pc md-w-33pc p-10">
-              <a href="#" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
-                  <img class="w-100pc" src=<?php "'.$postersrc.'" ?> alt="">
+              <a href="Product.php" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
+                  <img class="w-100pc" src=<?php $row['poster'] ?> alt="">
                   <p class="fw-600 white fs-m3 mt-3">
-                      <?php echo $title ?>
+                      <?php echo $row['title'] ?>
                   </p>
                   <div class="yellow fs-s3 italic after-arrow-right my-4">See More</div>
               </a>
@@ -166,7 +165,7 @@ echo 'Query error: '.$mysqli->error;
                     <div class="inline-block bg-black yellow-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">
                         History</div>
                     <div class="yellow-lightest fw-600 fs-m1"><span class="opacity-70"> See all your purchase history here</span> </div>
-                    <a href="History.html" class="mt-10 button bg-yellow fs-s1 black no-underline">History</a> <!See History Button>
+                    <a href="History.php" class="mt-10 button bg-yellow fs-s1 black no-underline">History</a> <!See History Button>
                 </div>
             </div>
             <div class="w-100pc md-w-50pc">

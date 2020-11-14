@@ -1,3 +1,19 @@
+<?php
+session_start();
+require_once('connect.php');
+//Get User id
+$username = $_SESSION['username'];
+
+  $q= 'SELECT username,user_id FROM user WHERE username = "'.$username.'"';
+if($result=$mysqli->query($q)){
+while($row=$result->fetch_array()){
+  $user_id=$row['user_id'];
+  }
+}
+else{
+echo 'Query error: '.$mysqli->error;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,103 +26,67 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
 </head>
 
 <body class="bg-black muli">
-    <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
-        <div class="flex justify-between">
-            <a href="index.html" class="flex items-center p-2 mr-4 no-underline">
-                <img class="max-h-l2 w-auto" src="assets/images/logo.png" />
-                <h1 style="color:white(238, 220, 220);">SundayCandy</h1>
-            </a>
-            <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
-                class="flex items-center ml-auto md-hidden indigo-lighter opacity-50 hover-opacity-100 ease-300 p-1 m-3">
-                <i data-feather="menu"></i>
-            </a>
-        </div>
-        <div id="nav-items" class="hidden flex sm-w-100pc flex-column md-flex md-flex-row md-justify-end items-center">
-            <a href="#addmovie" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">add</a>
-            <a href="#delete" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">delete</a>
-            <a href="contact.html" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">contact</a>
-        </div>
-    </nav> 
+  <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
+      <div class="flex justify-between">
+          <a href="index.php" class="flex items-center p-2 mr-4 no-underline">
+              <img class="max-h-l2 w-auto" src="images/logo.png" />
+              <h1 style="color:white;">SundayCandy</h1>
 
-    <!-- big text -->
-    <section id="addmovie" class="p-10 md-py-10">
-        <div class="w-100pc md-w-70pc mx-auto py-10">
-            <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                Customer Contact</h2>
-        </div>
-    </section>
+          </a>
+          <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
+              class="flex items-center ml-auto md-hidden yellow-lighter opacity-50 hover-opacity-100 ease-300 p-1 m-3">
+              <i data-feather="menu"></i>
+          </a>
+      </div>
+      <div id="nav-items" class="hidden flex sm-w-100pc flex-column md-flex md-flex-row md-justify-end items-center">
+          <a href="index.php#Libary" class="fs-s1 mx-3 py-3 yellow-light no-underline hover-underline">Libary</a>
+          <a href="index.php#Store" class="fs-s1 mx-3 py-3 yellow-light no-underline hover-underline">Movies</a>
+          <a href="index.php#Account" class="fs-s1 mx-3 py-3 yellow-light no-underline hover-underline">Account</a>
+          <a href="http://localhost/SundayCandy/login%20&%20logout/logout.php" class="fs-s1 mx-3 py-3 yellow-light no-underline hover-underline">Sign-Out</a>
+          <a href="#" class="button bg-yellow black fw-600 no-underline mx-5">Search</a>
+      </div>
+  </nav>
 
-    <!-- subscribe -->
-    <section class="p-10 md-p-l5">
-        <div class="br-6 bg-indigo-lightest-10 p-5 md-p-l5 flex flex-wrap md-justify-between md-items-center">
-            <div class="w-100pc md-w-50pc md-items-center"> <!genreID>
-                <div class="flex my-5 p-l1">
-                    <input type="text"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="genreID">
-                </div>
-            </div>
-            <div class="w-100pc md-w-50pc md-items-center"> <!movieID>
-                <div class="flex my-5 p-l1">
-                    <input type="text"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="movieID">
-                </div>
-            </div>
-            <div class="w-100pc md-w-50pc p-l1"> <!movieName>
-                <div class="flex my-5">
-                    <input type="text"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="Name">
-                </div>
-            </div>
-            <div class="w-100pc md-w-50pc p-l1"> <!date>
-                <div class="flex my-5">
-                    <input type="text"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="date">
-                </div>
-            </div>
-            <div class="w-100pc md-w-50pc p-l1"> <!buy>
-                <div class="flex my-5">
-                    <input type="text"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="price for buy">
-                </div>
-            </div>
-            <div class="w-100pc md-w-50pc p-l1"> <!rent>
-                <div class="flex my-5">
-                    <input type="text"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
-                        placeholder="price for rent">
-                </div>
-            </div>
-            <button class="button-lg bg-indigo indigo-lightest fw-300 fs-s3 br-l-0">Added</button>
-        </div>
-    </section>
 
-    <!-- big text -->
-    <section id="delete" class="p-10 md-py-10">
-        <div class="w-100pc md-w-70pc mx-auto py-10">
-            <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                movie</h2>
-        </div>
-    </section>
+    <!-- History -->
+    <!select Title,Purchase_ID,Price,Date>
+    <?php
+            $q='SELECT order_id,price,date,user_id,m_id FROM orderinfo WHERE user_id = "'.$user_id.'"';
+            $result = $mysqli->query($q);
 
-    <!-- footer
+            ?>
+
+    <section class="p-10 md-p-l10">
+        <div class="md-w-75pc">
+            <h2 class="white fs-l3 fw-900 lh-1">History</h2>
+            <p class="indigo-lightest fw-600 fs-m1 opacity-50 my-5">This will be the list of all purchase you made</p>
+        </div>
+        <br>
+        <?php while($row=$result->fetch_array()){ ?>
+        <div class="white fw-600 fs-m1 opacity-100 my-5">
+        <p2 class="white fw-800 fs-13 mb-5 my-5">Tenet</p2>
+          <br/><span class="white yellow opacity-70 fs-m2 lh-1">Purchase ID:</span> <?php echo $row['order_id'];?>
+          <br/><span class="white yellow opacity-70 fs-m2 lh-1">Status:</span> Buy
+          <br/><span class="white yellow opacity-70 fs-m2 lh-1">Price:</span> <?php echo $row['price'];?>
+          <br/><span class="white yellow opacity-70 fs-m2 lh-1">Date:</span> <?php echo $row['date'];?>
+          <br/><br/><hr style="width:50%;text-align:left;margin-left:0;">
+        </div>
+        <?php } ?>
+</section>
+
+
+    <!-- footer -->
     <footer class="p-5 md-p-l5 bg-indigo-lightest-10">
         <div class="flex flex-wrap">
             <div class="md-w-25pc mb-10">
                 <img src="assets/images/logo.png" class="w-l5" alt="">
                 <div class="white opacity-70 fs-s2 mt-4 md-pr-10">
-                    <p>Love is killing you daring</p>
+                    <p>We're all bad in someone's story.</p>
                     <br>
-                    <p>Soluta voluptate et optio. Eos quasi impedit sapiente aliquid eius eligendi at. Necessitatibus
-                        magni et sed quod quas minima.</p>
+                    <p>แชนี่อิสเรียลค่ะ.</p>
                 </div>
             </div>
             <div class="w-100pc md-w-50pc">
@@ -169,7 +149,7 @@
                 </div>
             </div>
         </div>
-    </footer> -->
+    </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
