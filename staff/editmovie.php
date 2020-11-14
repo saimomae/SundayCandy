@@ -36,7 +36,7 @@
     <section class="p-10 md-py-10">
         <div class="w-100pc md-w-70pc mx-auto py-10">
             <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                Edit movie</h2>
+                All movies</h2>
         </div>
     </section>
 
@@ -63,7 +63,7 @@
     }
     ?>
 
-    <section class="p-10 md-p-l5">
+    <section class="flex p-10 md-p-l">
       <div class="br-6 bg-indigo-lightest-10 p-5 md-p-l5 flex flex-wrap white md-justify-between md-items-center">
           <div class="w-100pc md-w-100pc lg-w-100pc">
       <?php
@@ -74,22 +74,22 @@
 						return false;
 					}
 				 while($row=$result->fetch_array()){ ?>
-           <div class="flex-equal">
+           <div class="flex-equal fs-m1 fw-700">
                 <br>
-                    <td><?=$row['title']?></td>
-                    <td><?=$row['time']?></td>
-                    <td><?=$row['price_rent']?></td>
-                    <td><?=$row['price_buy']?></td>
+                    <td><?=$row['title']?>  </td>
+                    <td><?=$row['time']?> days</td>
+                    <td><?=$row['price_rent']?> bath</td>
+                    <td><?=$row['price_buy']?> bath</td>
                     <td><?=$row['g_id']?></td>
                     <td><a href ='delinfo.php?id=<?=$row['m_id']?>'><img src="delete-24.png" width="24" height="24"></a></td>
                     <td><a href ='editinfo.php?id=<?=$row['m_id']?>'><img src="edit-11.png" width="24" height="24"></a></td>
-                <br>
           </div>
 				<?php } ?>
 
         <?php
   			// count the no. of entries
   			$count=$result ->num_rows;
+            echo "<br>";
   					echo "<tr><td colspan = 6 align = right> Total $count
   						movies</td></tr>";
   					$result ->free();
