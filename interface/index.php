@@ -142,7 +142,7 @@ echo 'Query error: '.$mysqli->error;
             //$_SESSION['m_id']   = $m_id;?> <!loop doop>
           <div class="w-100pc md-w-33pc p-10">
               <a href="Product.php" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
-                  <img class="w-100pc" src=<?php $row['poster'] ?> alt="">
+                  <?php echo "<img class='w-100pc' src= ".$row['poster']."  alt=''>";?> <!echo html with variable>
                   <p class="fw-600 white fs-m3 mt-3">
                       <?php echo $row['title'] ?>
                   </p>

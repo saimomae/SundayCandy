@@ -16,8 +16,8 @@
 <body class="bg-black muli">
     <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
         <div class="flex justify-between">
-            <a href="index.html" class="flex items-center p-2 mr-4 no-underline">
-                <img class="max-h-l2 w-auto" src="assets/images/logo.png" />
+            <a href="index_staff.html" class="flex items-center p-2 mr-4 no-underline">
+                <img class="max-h-l2 w-auto" src="images/logo.png" />
                 <h1 style="color:white(238, 220, 220);">SundayCandy</h1>
             </a>
             <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
@@ -65,11 +65,11 @@
                 <br>
           </div>
 				<?php } ?>
-
+        <br>
         <?php
   			// count the no. of entries
   			$count=$result ->num_rows;
-  					echo "<tr><td colspan = 6 align = right> Total $count
+  					echo "<tr><td colspan=6 align=right> Total $count
   						records</td></tr>";
   					$result ->free();
   			?>

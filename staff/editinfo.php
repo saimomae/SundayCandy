@@ -17,8 +17,8 @@
 <body class="bg-black muli">
     <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
         <div class="flex justify-between">
-            <a href="index.html" class="flex items-center p-2 mr-4 no-underline">
-                <img class="max-h-l2 w-auto" src="assets/images/logo.png" />
+            <a href="index_staff.html" class="flex items-center p-2 mr-4 no-underline">
+                <img class="max-h-l2 w-auto" src="images/logo.png" />
                 <h1 style="color:white(238, 220, 220);">SundayCandy</h1>
             </a>
             <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
@@ -59,35 +59,35 @@
           <div class="w-100pc md-w-50pc p-l1"> <!movieID>
             <div class="white fw-600 fs-m1">Movie ID</div>
               <div class="flex my-5">
-                <?php echo "<input type=text name=id value=". $row['m_id'] ." Disabled
+                <?php echo "<input type='text' name='id' value=".$row['m_id']." Disabled
                 class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
           <div class="w-100pc md-w-50pc p-l1"> <!movieName>
             <div class="white fw-600 fs-m1">Title</div>
               <div class="flex my-5">
-                  <?php echo "<input type=text name=title value=". $row['title'] ."
+                  <?php echo "<input type='text' name='title' value=".$row['title']."
                   class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
           <div class="w-100pc md-w-50pc p-l1"> <!Rent Time>
             <div class="white fw-600 fs-m1">Rent time</div>
               <div class="flex my-5">
-                <?php echo "<input type='text' name='time' value=". $row['time'] ."
+                <?php echo "<input type='text' name='time' value=".$row['time']."
                 class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
           <div class="w-100pc md-w-50pc p-l1"> <!Price Rent>
             <div class="white fw-600 fs-m1">Price for rent</div>
               <div class="flex my-5">
-                <?php echo "<input type='text' name='price_rent' value=". $row['price_rent'] ."
+                <?php echo "<input type='text' name='price_rent' value=".$row['price_rent']."
                 class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
           <div class="w-100pc md-w-50pc p-l1"> <!Price Buy>
             <div class="white fw-600 fs-m1">Price for buy</div>
               <div class="flex my-5">
-                <?php echo "<input type='text' name='price_buy' value=". $row['price_buy'] ."
+                <?php echo "<input type='text' name='price_buy' value=".$row['price_buy']."
                 class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
