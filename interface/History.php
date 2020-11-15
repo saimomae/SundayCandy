@@ -54,7 +54,8 @@ echo 'Query error: '.$mysqli->error;
     <!-- History -->
     <!select Title,Purchase_ID,Price,Date>
     <?php
-            $q='SELECT order_id,price,date,user_id,m_id FROM orderinfo WHERE user_id = "'.$user_id.'"';
+            $q="SELECT orderinfo.m_id,movie.m_id,title,price,date,user_id,order_id FROM orderinfo,movie
+            WHERE movie.m_id=orderinfo.m_id AND user_id = $user_id;";
             $result = $mysqli->query($q);
 
             ?>
@@ -67,7 +68,7 @@ echo 'Query error: '.$mysqli->error;
         <br>
         <?php while($row=$result->fetch_array()){ ?>
         <div class="white fw-600 fs-m1 opacity-100 my-5">
-        <p2 class="white fw-800 fs-13 mb-5 my-5">Tenet</p2>
+        <p2 class="white fw-800 fs-13 mb-5 my-5"><?php echo $row['title'];?></p2>
           <br/><span class="white yellow opacity-70 fs-m2 lh-1">Purchase ID:</span> <?php echo $row['order_id'];?>
           <br/><span class="white yellow opacity-70 fs-m2 lh-1">Status:</span> Buy
           <br/><span class="white yellow opacity-70 fs-m2 lh-1">Price:</span> <?php echo $row['price'];?>

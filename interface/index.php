@@ -1,13 +1,14 @@
 <?php
 session_start();
 require_once('connect.php');
-//Get user firstname
+//Get user firstname, id
 $username = $_SESSION['username'];
 
-  $q= 'SELECT username,FName FROM user WHERE username = "'.$username.'"';
+  $q= 'SELECT username,FName,user_id FROM user WHERE username = "'.$username.'"';
 if($result=$mysqli->query($q)){
 while($row=$result->fetch_array()){
   $UserFirstname=$row['FName'];
+  $user_id=$row['user_id'];
   }
 }
 else{
@@ -63,68 +64,36 @@ echo 'Query error: '.$mysqli->error;
                 movies you didn't catch up yet...
             </div>
         </div>
-    </section> --> -->
+    </section> -->
 
     <!-- Libary -->
     <section id="Libary" class="p-0 md-p-5">
+      <!Get all movie where user made the Purchase>
+      <?php
+              $q="SELECT orderinfo.m_id,movie.m_id,title,poster,user_id
+              FROM movie,orderinfo
+              WHERE movie.m_id=orderinfo.m_id AND user_id=$user_id;";
+              $result = $mysqli->query($q);
+                //$m_id=$row['m_id'];
+                //$postersrc=$row['poster'];
+              ?>
+
+      <section id="Store" class="p-0 md-p-5">
           <div class="flex flex-wrap">
-            <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-700 ">Your Collection</h1><hr style="width:50%;text-align:left;margin-left:0;visibility: hidden">
+            <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900 ">Your Collection</h1><hr style="width:50%;text-align:left;margin-left:0;visibility: hidden">
+            <?php while($row=$result->fetch_array()){
+              //$_SESSION['m_id']   = $m_id;?> <!loop doop>
             <div class="w-100pc md-w-33pc p-10">
-                <a href="Product.php" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
-                    <img class="w-100pc" src="images/tenet.reg.ar_480x.progressive.jpg" alt="">
+                <a href="" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
+                    <?php echo "<img class='w-100pc' src= ".$row['poster']."  alt=''>";?> <!echo html with variable>
                     <p class="fw-600 white fs-m3 mt-3">
-                        TENET
-                    </p>
-                    <div class="yellow-light fs-s3 italic after-arrow-right my-4">See More</div>
-                </a>
-            </div>
-              <div class="w-100pc md-w-33pc p-10">
-                  <a href="#" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
-                      <img class="w-100pc" src="images/Lalaland_480x.progressive.jpg" alt="">
-                      <p class="fw-600 white fs-m3 mt-3">
-                        La La Land
+                        <?php echo $row['title'] ?>
                     </p>
                     <div class="yellow fs-s3 italic after-arrow-right my-4">See More</div>
                 </a>
             </div>
-            <div class="w-100pc md-w-33pc p-10">
-                <a href="#" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
-                    <img class="w-100pc" src="images/1917.125785.ar_480x.progressive.jpg" alt="">
-                    <p class="fw-600 white fs-m3 mt-3">
-                        1917
-                    </p>
-                    <div class="yellow fs-s3 italic after-arrow-right my-4">See More</div>
-                </a>
-            </div>
-            <div class="w-100pc md-w-33pc p-10">
-                <a href="#" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
-                    <img class="w-100pc" src="images/Inception_480x.progressive.jpg" alt="">
-                    <p class="fw-600 white fs-m3 mt-3">
-                        Inception
-                    </p>
-                    <div class="yellow fs-s3 italic after-arrow-right my-4">See More</div>
-                </a>
-            </div>
-            <div class="w-100pc md-w-33pc p-10">
-                <a href="#" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
-                    <img class="w-100pc" src="images/PitchPerfect2_480x.progressive.jpg" alt="">
-                    <p class="fw-600 white fs-m3 mt-3">
-                        Pitch Perfect 2
-                    </p>
-                    <div class="yellow fs-s3 italic after-arrow-right my-4">See More</div>
-                </a>
-            </div>
-            <div class="w-100pc md-w-33pc p-10">
-                <a href="#" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
-                    <img class="w-100pc" src="images/Spotlight_480x.progressive.jpg" alt="">
-                    <p class="fw-600 white fs-m3 mt-3">
-                        Spotlight
-                    </p>
-                    <div class="yellow fs-s3 italic after-arrow-right my-4">See More</div>
-                </a>
-            </div>
-        </div>
-    </section>
+            <?php } ?>
+      </section>
 
     <!-- store -->
     <!select movies,m_id,poster>
