@@ -30,8 +30,8 @@ echo 'Query error: '.$mysqli->error;
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
 
-<body class="pink-orange muli">
-    <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 pink-orange shadow-2"> <!navbar>
+<body class="bg-black muli">
+    <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 black shadow-2"> <!navbar>
         <div class="flex justify-between">
             <a href="#" class="flex items-center p-2 mr-4 no-underline">
                 <img class="max-h-l2 w-auto" src="images/logo.png" />
@@ -54,8 +54,8 @@ echo 'Query error: '.$mysqli->error;
 
     <!-- Home/For You -->
     <div class="w-100pc md-w-50pc mx-auto py-5 ">
-        <h2 class="white fs-l2 md-fs-xl1 lh-2 flex flex-wrap">
-          Good Afternoon, <span class="border-b bc-yellow-light bw-4 fw-900"> <?php echo $UserFirstname ?> </span></h2> <!User FName>
+        <h2 class="white fs-l3 lh-2 flex flex-wrap">
+          You're logged in as, <?php echo "&nbsp";?><span class="border-b bc-yellow-light bw-4 fw-900"><?php echo $UserFirstname ?></span></h2> <!User FName>
     </div>
     <!-- <section id="home" class="min-h-100vh flex justify-center items-center">
         <div class="mx-5 md-mx-l3">
