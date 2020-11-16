@@ -16,7 +16,7 @@
 <body class="bg-black muli">
     <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
         <div class="flex justify-between">
-            <a href="index_staff.html" class="flex items-center p-2 mr-4 no-underline">
+            <a href="index.html" class="flex items-center p-2 mr-4 no-underline">
                 <img class="max-h-l2 w-auto" src="assets/images/logo.png" />
                 <h1 style="color:white(238, 220, 220);">SundayCandy</h1>
             </a>
@@ -44,8 +44,7 @@
     <section class="p-10 md-p-l5">
       <form action="editmovie.php" method="post">
         <div class="br-6 bg-indigo-lightest-10 p-5 md-p-l5 flex flex-wrap md-justify-between md-items-center">
-            <div class="w-100pc md-w-50pc" > <!genreID>
-              <div class="white fw-600 fs-m1">Genre</div>
+            <div class="w-100pc md-w-50pc md-items-center" > <!genreID>
                 <div class="flex my-5 p-l1">
                     <select name="g_id" class="input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0">
                       <?php
@@ -63,7 +62,6 @@
                 </div>
             </div>
             <div class="w-100pc md-w-50pc p-l1"> <!movieName>
-              <div class="white fw-600 fs-m1">Movie Name</div>
                 <div class="flex my-5">
                     <input type="text" name ="title"
                         class="input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray"
@@ -71,15 +69,13 @@
                 </div>
             </div>
             <div class="w-100pc md-w-50pc p-l1"> <!time>
-              <div class="white fw-600 fs-m1">Time(days)</div>
                 <div class="flex my-5">
                     <input type="text" name ="time"
                         class="input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray"
-                        placeholder="Time(days)">
+                        placeholder="Time(day)">
                 </div>
             </div>
             <div class="w-100pc md-w-50pc p-l1"> <!buy>
-              <div class="white fw-600 fs-m1">Price for buy</div>
                 <div class="flex my-5">
                     <input type="text" name="price_buy"
                         class="input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray"
@@ -87,27 +83,10 @@
                 </div>
             </div>
             <div class="w-100pc md-w-50pc p-l1"> <!rent>
-              <div class="white fw-600 fs-m1">Price for rent</div>
                 <div class="flex my-5">
                     <input type="text" name ="price_rent"
                         class="input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray"
                         placeholder="price for rent">
-                </div>
-            </div>
-            <div class="w-100pc md-w-50pc p-l1"> <!Movie discription>
-              <div class="white fw-600 fs-m1">Movie discription</div>
-                <div class="flex my-5">
-                    <input type="text" name ="price_rent"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray"
-                        placeholder="Movie discription">
-                </div>
-            </div>
-            <div class="w-100pc md-w-50pc p-l1"> <!Poster>
-              <div class="white fw-600 fs-m1">Poster path</div>
-                <div class="flex my-5">
-                    <input type="text" name ="price_rent"
-                        class="input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray"
-                        placeholder="Poster path">
                 </div>
             </div>
             <button input type="submit" name="sub" class="button-lg bg-indigo indigo-lightest fw-300 fs-s3 br-l-0">Add</button>
