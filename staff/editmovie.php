@@ -8,16 +8,16 @@
     <title>SundayCandy</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shorthandcss@1.1.1/dist/shorthand.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:200,300,400,500,600,700,800,900&display=swap" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
 </head>
 
 <body class="bg-black muli">
     <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
         <div class="flex justify-between">
             <a href="index_staff.html" class="flex items-center p-2 mr-4 no-underline">
-                <img class="max-h-l2 w-auto" src="images/logo.png" />
+                <img class="max-h-l2 w-auto" src="assets/images/logo.png" />
                 <h1 style="color:white(238, 220, 220);">SundayCandy</h1>
             </a>
             <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
@@ -49,51 +49,78 @@
     $price_rent = $_POST['price_rent'];
     $price_buy= $_POST['price_buy'];
     $g_id = $_POST['g_id'];
+    $poster = $_POST['poster'];
     require_once('connect.php');
 
 
-    $q="INSERT INTO movie (title,time,price_rent,price_buy,g_id)
-    VALUES ('$title','$time','$price_rent','$price_buy','$g_id')";
+    $q="INSERT INTO movie (title,time,price_rent,price_buy,g_id,poster)
+    VALUES ('$title','$time','$price_rent','$price_buy','$g_id','$poster')";
     $result = $mysqli->query($q);
     if (!$result) {
     echo "INSERT failed.Error: ".$mysqli->error ;
-    						return flase;
+    		return flase;
               }
     header("Location: editmovie.php");
     }
     ?>
 
-    <section class="flex p-10 md-p-l">
-      <div class="br-6 bg-indigo-lightest-10 p-5 md-p-l5 flex flex-wrap white md-justify-between md-items-center">
-          <div class="w-100pc md-w-100pc lg-w-100pc">
+    <section class="p-10 flex flex-wrap justify-center item-center">
+      <div class="br-6 bg-indigo-lightest-10 p-1 md-p-l5 flex flex-wrap white md-justify-between md-items-center ">
+      <table border='3'>
+        <div class="w-100pc md-w-100pc lg-w-100pc ">
+          <div class="flex-equal fs-m1 fw-1000 ">
+
+          <tr>
+                    <th>Title</th>
+                    <th>time</th>
+                    <th>Rent</th>
+                    <th>Buy</th>
+                    <th>Geners</th>
+                    <th>Poster</th>
+                    <th>Edit</th>
+                    <th>Del</th>
+          </tr>
       <?php
-				 	$q="SELECT m_id,title,time,price_rent,price_buy,g_id from movie";
-					$result=$mysqli->query($q);
+				 	$q="SELECT m_id,title,time,price_rent,price_buy,genres.g_name,poster from movie,genres WHERE movie.g_id = genres.g_id ";
+                    $result=$mysqli->query($q);
+
 					if(!$result){
 						echo "Select failed. Error: ".$mysqli->error ;
-						return false;
-					}
-				 while($row=$result->fetch_array()){ ?>
-           <div class="flex-equal fs-m1 fw-700">
+                        return false;
+
+                    }
+
+
+                        while($row=$result->fetch_array()){ ?>
+                <div class="flex-equal fs-m1 fw-1000 ">
                 <br>
-                    <td><?=$row['title']?>  </td>
-                    <td><?=$row['time']?> days</td>
-                    <td><?=$row['price_rent']?> bath</td>
-                    <td><?=$row['price_buy']?> bath</td>
-                    <td><?=$row['g_id']?></td>
-                    <td><a href ='delinfo.php?id=<?=$row['m_id']?>'><img src="delete-24.png" width="24" height="24"></a></td>
-                    <td><a href ='editinfo.php?id=<?=$row['m_id']?>'><img src="edit-11.png" width="24" height="24"></a></td>
-          </div>
-				<?php } ?>
+                    <col width="100%">
+
+                            <td><?=$row['title']?>  </td>
+                            <td><?=$row['time']?> days</td>
+                            <td><?=$row['price_rent']?> bath</td>
+                            <td><?=$row['price_buy']?> bath</td>
+                            <td><?=$row['g_name']?></td>
+                            <td><?=$row['poster']?></td>
+                            <td><a href ='delinfo.php?id=<?=$row['m_id']?>'><img src="delete-24.png" width="24" height="24"></a></td>
+                            <td><a href ='editinfo.php?id=<?=$row['m_id']?>'><img src="edit-11.png" width="24" height="24"></a></td>
+                        </br>
+                        <?php } ?>
+
+                    </div>
+
+
+
 
         <?php
   			// count the no. of entries
   			$count=$result ->num_rows;
             echo "<br>";
-  					echo "<tr><td colspan = 6 align = right> Total $count
+  					echo "<tr><td colspan = 6 align = right > Total $count
   						movies</td></tr>";
   					$result ->free();
-  			?>
+              ?>
+         </table>
       </div>
       </div>
     </section>

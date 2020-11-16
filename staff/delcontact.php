@@ -1,15 +1,14 @@
 <?php
-	// $g_id = $_GET['id'];
-	$id = $_GET['id'];
+	$user_id = $_GET['id'];
 	require_once('connect.php');
-	if (isset($id)) {
-		$q="DELETE FROM movie where m_id=$id";
+	if(isset($user_id)) {
+		$q="DELETE FROM user WHERE user_id=$user_id";
 			if(!$mysqli->query($q)){
 				echo "DELETE failed. Error: ".$mysqli->error ;
 		   }
 		   $mysqli->close();
 		   //redirect
-		   header("Location: editmovie.php");
+		   header("Location: contact.php");
 	}
 
 ?>
