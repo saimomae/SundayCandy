@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:200,300,400,500,600,700,800,900&display=swap" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-   
+
 </head>
 
 <body class="bg-black muli">
@@ -66,13 +66,13 @@
 
     <section class="p-10 flex flex-wrap justify-center item-center">
       <div class="br-6 bg-indigo-lightest-10 p-1 md-p-l5 flex flex-wrap white md-justify-between md-items-center ">
-      <table border='2'>    
+      <table border='3'>
         <div class="w-100pc md-w-100pc lg-w-100pc ">
           <div class="flex-equal fs-m1 fw-1000 ">
-          
+
           <tr>
                     <th>Title</th>
-                    <th>time</th> 
+                    <th>time</th>
                     <th>Rent</th>
                     <th>Buy</th>
                     <th>Geners</th>
@@ -83,25 +83,19 @@
       <?php
 				 	$q="SELECT m_id,title,time,price_rent,price_buy,genres.g_name,poster from movie,genres WHERE movie.g_id = genres.g_id ";
                     $result=$mysqli->query($q);
-                    
+
 					if(!$result){
 						echo "Select failed. Error: ".$mysqli->error ;
                         return false;
-                        
+
                     }
-            
-                    
+
+
                         while($row=$result->fetch_array()){ ?>
                 <div class="flex-equal fs-m1 fw-1000 ">
                 <br>
-                    <col width="100%"> 
-                    <col width="45%">
-                    <col width="50%">
-                    <col width="50%">
-                    <col width="50%">
-                    <col width="10%">
-                    <col width="10%">
-                        
+                    <col width="100%">
+
                             <td><?=$row['title']?>  </td>
                             <td><?=$row['time']?> days</td>
                             <td><?=$row['price_rent']?> bath</td>
@@ -112,12 +106,12 @@
                             <td><a href ='editinfo.php?id=<?=$row['m_id']?>'><img src="edit-11.png" width="24" height="24"></a></td>
                         </br>
                         <?php } ?>
-                       
+
                     </div>
-                      
-               
-                
-    
+
+
+
+
         <?php
   			// count the no. of entries
   			$count=$result ->num_rows;
@@ -126,7 +120,7 @@
   						movies</td></tr>";
   					$result ->free();
               ?>
-         </table>  
+         </table>
       </div>
       </div>
     </section>

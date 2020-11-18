@@ -44,12 +44,12 @@
 
     <section class="p-10 flex flex-wrap justify-center item-center">
       <div class="br-6 bg-indigo-lightest-10 p-5 md-p-l5 flex flex-wrap white md-justify-between md-items-center">
-      <table border='2'> 
+      <table border='2'>
         <div class="w-100pc md-w-100pc lg-w-100pc">
         <div class="flex-equal fs-m1 fw-1000">
         <tr>
-                    <th>Username</th> 
-                    <th>Password</th> 
+                    <th>Username</th>
+                    <th>Password</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -66,7 +66,7 @@
 				 while($row=$result->fetch_array()){ ?>
            <div class="flex-equal fs-m1 fw-1000">
                 <br>
-                    <col width="10%"> 
+                    <col width="10%">
                     <col width="45%">
                     <col width="50%">
                     <col width="50%">
@@ -80,8 +80,8 @@
                         <td><?=$row['LName']?></td>
                         <td><?=$row['Email']?></td>
                         <td><?=$row['Phone']?></td>
-                        <td><a href ='delcontact.php?id=<?=$row['u_id']?>'><img src="delete-24.png" width="24" height="24"></a></td>
-                 </br>       
+                        <td><a href ="delcontact.php?id=<?=$row['user_id']?>"><img src="delete-24.png" width="24" height="24"></a></td>
+                 </br>
                 <?php } ?>
                 </div>
 
@@ -92,7 +92,7 @@
   						records</td></tr>";
   					$result ->free();
               ?>
-            </table> 
+            </table>
       </div>
       </div>
     </section>
@@ -101,7 +101,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="assets/js/script.js"></script>
-   
+
 </body>
 
 </html>

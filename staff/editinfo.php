@@ -66,8 +66,8 @@
           <div class="w-100pc md-w-50pc p-l1"> <!movieName>
             <div class="white fw-600 fs-m1">Title</div>
               <div class="flex my-5">
-                  <?php echo "<input type=text name=title value=". $row['title'] ."
-                  class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
+                <?php echo "<input type='text' name='time' value=".$row['title']."
+                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
           <div class="w-100pc md-w-50pc p-l1"> <!Rent Time>
@@ -110,7 +110,9 @@
               </div>
           </div>
           <button input type=submit value=submit class="button-lg bg-indigo indigo-lightest fw-300 fs-s3 br-l-0">Edit</button>
-          <?php } ?>
+          <?php
+          $mysqli->close();
+           } ?>
 
         </div>
       </section>
