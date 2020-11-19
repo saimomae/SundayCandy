@@ -1,6 +1,6 @@
 <?php
+	// $g_id = $_GET['id'];
 	$id = $_GET['id'];
-	// $userid = $_GET['userid'];
 	require_once('connect.php');
 	if (isset($id)) {
 		$q="DELETE FROM movie where m_id=$id";

@@ -55,7 +55,7 @@ echo 'Query error: '.$mysqli->error;
     <!-- Home/For You -->
     <div class="w-100pc md-w-50pc mx-auto py-5 ">
         <h2 class="white fs-l3 lh-2 flex flex-wrap">
-        You're logged in as, <?php echo "&nbsp";?><span class="border-b bc-yellow-light bw-4 fw-900"><?php echo $UserFirstname ?></span></h2> <!User FName>
+          You're logged in as, <?php echo "&nbsp";?><span class="border-b bc-yellow-light bw-4 fw-900"><?php echo $UserFirstname ?></span></h2> <!User FName>
     </div>
     <!-- <section id="home" class="min-h-100vh flex justify-center items-center">
         <div class="mx-5 md-mx-l3">
@@ -110,7 +110,7 @@ echo 'Query error: '.$mysqli->error;
           <?php while($row=$result->fetch_array()){
             //$_SESSION['m_id']   = $m_id;?> <!loop doop>
           <div class="w-100pc md-w-33pc p-10">
-              <a href="Product.php" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
+              <a href="Product.php?id=<?=$row['m_id']?>" class="block no-underline p-5 br-8 hover-bg-yellow-lightest-10 hover-scale-up-1 ease-300">
                   <?php echo "<img class='w-100pc' src= ".$row['poster']."  alt=''>";?> <!echo html with variable>
                   <p class="fw-600 white fs-m3 mt-3">
                       <?php echo $row['title'] ?>
@@ -142,7 +142,7 @@ echo 'Query error: '.$mysqli->error;
                     <div class="inline-block bg-black yellow-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">
                         Change Password</div>
                     <div class="yellow-lightest fw-600 fs-m1"><span class="opacity-70"> Reset your password here</span> </div>
-                    <a href="newpasswd.php" class="mt-10 button bg-yellow fs-s1 black no-underline">Change Password</a> <!Change Password Button>
+                    <a href="#" class="mt-10 button bg-yellow fs-s1 black no-underline">Change Password</a> <!Change Password Button>
                 </div>
             </div>
         </div>
@@ -224,7 +224,7 @@ echo 'Query error: '.$mysqli->error;
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>

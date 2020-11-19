@@ -4,6 +4,7 @@ require_once('connect.php');
 session_start();
 $status = $_SESSION['status'];
 $price = $_SESSION['price'];
+$title = $_SESSION['title'];
 ?>
 <html lang="en">
 
@@ -51,7 +52,7 @@ $price = $_SESSION['price'];
             </a>
         </div>
         <div class="white fw-600 fs-l1 opacity-100 my-5">
-        <p2 class="white fw-800 fs-20 my-5">Tenet</p2>
+        <p2 class="white fw-800 fs-20 my-5"><?php echo $title;?></p2>
           <br/><span class="white yellow opacity-90 fs-l1 lh-1">Status:</span> <?php echo $status;?>
           <br/><span class="white yellow opacity-90 fs-l1 lh-1">Price:</span> <?php echo $price;?>
           <br/><br/><hr style="width:50%;text-align:left;margin-left:0;">

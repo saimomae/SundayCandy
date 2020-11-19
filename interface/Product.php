@@ -1,7 +1,23 @@
 <?php require_once('connect.php');
+$m_id = $_GET['id'];
+$q= 'SELECT title,time,price_rent,price_buy,g_id,m_desc,poster FROM movie WHERE m_id = "'.$m_id.'"';
+if($result=$mysqli->query($q)){
+while($row=$result->fetch_array()){
+$title=$row['title'];
+$time=$row['time'];
+$g_id=$row['g_id'];
+$m_desc=$row['m_desc'];
+$poster=$row['poster'];
+}
+}
+else{
+echo 'Query error: '.$mysqli->error;
+}
+
 session_start();
-$title = $_SESSION['title'];
-$m_id = $_SESSION['m_id'];?>
+$_SESSION['m_id'] = $m_id;
+$_SESSION['title'] = $title_checkout;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +36,7 @@ $m_id = $_SESSION['m_id'];?>
 <body class="bg-black muli">
   <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
       <div class="flex justify-between">
-          <a href="#" class="flex items-center p-2 mr-4 no-underline">
+          <a href="index.php" class="flex items-center p-2 mr-4 no-underline">
               <img class="max-h-l2 w-auto" src="images/logo.png" />
               <h1 style="color:white;">SundayCandy</h1>
 
@@ -45,7 +61,7 @@ $m_id = $_SESSION['m_id'];?>
         <div class="p-10 flex flex-wrap justify-center items-center">
             <div class="w-100pc md-w-50pc">
                 <div class="p-5">
-                    <h4 class="white fw-800 fs-l3 mb-5"><?php echo "TENET"?></h4> <!Movie Title!>
+                    <h4 class="white fw-800 fs-l3 mb-5"><?php echo $title?></h4> <!Movie Title!>
                     <div class="yellow-lightest fw-600 fs-m1 opacity-70">A secret agent embarks on a dangerous, time-bending mission to
                       prevent the start of World War III.<br/> <!Movie Decription!>
                       <br/><span class="white yellow-light fs-m2 lh-1">Release date:</span> August 27, 2020 (Thailand)
@@ -103,13 +119,14 @@ $m_id = $_SESSION['m_id'];?>
             </div>
             <div class="w-100pc md-w-33pc p-10">
                 <a class="block no-underline p-5 br-8 ">
-                    <img class="w-100pc" src="images/tenet.reg.ar_480x.progressive.jpg" alt="">
+                    <!-- <img class="w-100pc" src="<?php $poster ?>" alt=""> -->
+                    <?php echo "<img class='w-100pc' src= '$poster'  alt=''>";?>
                 </a>
             </div>
 
             <!Getprice>
             <?php
-            $q= 'SELECT price_buy,price_rent FROM movie WHERE m_id = 1';
+            $q= 'SELECT price_buy,price_rent FROM movie WHERE m_id = "'.$m_id.'"';
             if($result=$mysqli->query($q)){
               while($row=$result->fetch_array()){
                 $price_buy=$row['price_buy'];
@@ -146,7 +163,7 @@ $m_id = $_SESSION['m_id'];?>
                     <div class="p-3 black fw-400 fs-s1 lh-5">
                         <div>
                             <i class="h-3 yellow" stroke-width="4" data-feather="check"></i>
-                            <span class="opacity-50"> 7 days</span></div>
+                            <span class="opacity-50"><?php echo $time ?> days</span></div>
                     </div>
                     <div class="p-3">
                         <button input type="submit" name="sub_rent" class="button full bg-yellow black hover-opacity-100 hover-scale-up-1 ease-300">RENT</button>
@@ -160,7 +177,7 @@ $m_id = $_SESSION['m_id'];?>
     <section class="p-10 md-py-10">
         <div class="w-100pc md-w-70pc mx-auto py-10">
             <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                More like, <span class="border-b bc-yellow bw-4"> TENET</span> </h2>
+                More like, <span class="border-b bc-yellow bw-4"> </span> <?php echo $title; ?></h2>
         </div>
     </section>
 
@@ -171,7 +188,7 @@ $m_id = $_SESSION['m_id'];?>
             <div class="px-3 w-100pc md-w-25pc">
                 <div class="p-8 br-8 bg-yellow-lightest-10 relative">
                     <p class="fw-600 fs-m3 yellow-lightest opacity-80 italic ls-wider "><?php
-                    $q= 'SELECT g_id,title FROM movie WHERE g_id = 1 AND title !="Tenet"; ';
+                    $q= 'SELECT g_id,title FROM movie WHERE g_id = "'.$g_id.'" AND title !="'.$title.'"; ';
                     if($result=$mysqli->query($q)){
                       while($row=$result->fetch_array()){
                         echo '<option value="'.$row[0].'">'.$row[1].'</option>';
@@ -262,7 +279,7 @@ $m_id = $_SESSION['m_id'];?>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>

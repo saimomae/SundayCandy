@@ -17,7 +17,7 @@
     <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
         <div class="flex justify-between">
             <a href="index_staff.html" class="flex items-center p-2 mr-4 no-underline">
-                <img class="max-h-l2 w-auto" src="assets/images/logo.png" />
+                <img class="max-h-l2 w-auto" src="../assets/images/logo.png" />
                 <h1 style="color:white(238, 220, 220);">SundayCandy</h1>
             </a>
             <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
@@ -83,14 +83,11 @@
       <?php
 				 	$q="SELECT m_id,title,time,price_rent,price_buy,genres.g_name,poster from movie,genres WHERE movie.g_id = genres.g_id ";
                     $result=$mysqli->query($q);
-
 					if(!$result){
 						echo "Select failed. Error: ".$mysqli->error ;
                         return false;
 
                     }
-
-
                         while($row=$result->fetch_array()){ ?>
                 <div class="flex-equal fs-m1 fw-1000 ">
                 <br>
