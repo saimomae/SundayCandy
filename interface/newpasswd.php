@@ -49,15 +49,15 @@
     $q= 'SELECT username,user_id FROM user WHERE username = "'.$username.'"';
     $result = $mysqli->query($q);
     echo "<form action='updatepass.php' method='post'>";
-    
+
         ?>
- 
+
     <!Edit part>
     <section class="p-10 md-p-l5">
             <div class="br-6 bg-indigo-lightest-10 p-5 md-p-l5 flex flex-wrap md-justify-between md-items-center">
                     <div class="w-100pc md-w-50pc md-items-center"> <!Username>
                         <div class="flex my-5 p-l1">
-                            <input type="text" name="username"
+                            <input type="text" name="input_username"
                                 class="input-lg flex-grow-1 bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0"
                                 placeholder="Username">
                         </div>
@@ -71,8 +71,8 @@
                         </div>
                     </div>
                 <button type="submit" value="submit" class="button-lg bg-indigo indigo-lightest fw-300 fs-s3 br-l-0">Submit</button>
-        <?php 
+        <?php
         $mysqli->close();
-        ?>   
+        ?>
             </div>
     </section>

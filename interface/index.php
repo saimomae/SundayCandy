@@ -142,7 +142,7 @@ echo 'Query error: '.$mysqli->error;
                     <div class="inline-block bg-black yellow-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">
                         Change Password</div>
                     <div class="yellow-lightest fw-600 fs-m1"><span class="opacity-70"> Reset your password here</span> </div>
-                    <a href="#" class="mt-10 button bg-yellow fs-s1 black no-underline">Change Password</a> <!Change Password Button>
+                    <a href="newpasswd.php" class="mt-10 button bg-yellow fs-s1 black no-underline">Change Password</a> <!Change Password Button>
                 </div>
             </div>
         </div>

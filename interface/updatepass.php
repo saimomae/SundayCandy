@@ -1,6 +1,8 @@
 <?php
-$username = $_POST['username'];
-$password = $_POST['password'];
+session_start();
+$username = $_SESSION['username'];
+$input_username = $_POST['input_username'];
+$password = $_POST['new_pass'];
 
 require_once('connect.php');
 
@@ -9,7 +11,7 @@ if ($mysqli->connect_errno) {
 }
 
 
-$q = "UPDATE user SET password='$password' WHERE username = $username";
+$q = 'UPDATE user SET password= "'.$password.'" WHERE username = "'.$username.'"';
 if (!$mysqli->query($q)) {
     echo "UPDATE failed. Error: " . $mysqli->error;
   }
