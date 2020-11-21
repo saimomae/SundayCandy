@@ -16,7 +16,7 @@ echo 'Query error: '.$mysqli->error;
 
 session_start();
 $_SESSION['m_id'] = $m_id;
-$_SESSION['title'] = $title_checkout;
+$title_checkout = $_SESSION['title'];
 ?>
 
 <!DOCTYPE html>
@@ -119,7 +119,6 @@ $_SESSION['title'] = $title_checkout;
             </div>
             <div class="w-100pc md-w-33pc p-10">
                 <a class="block no-underline p-5 br-8 ">
-                    <!-- <img class="w-100pc" src="<?php $poster ?>" alt=""> -->
                     <?php echo "<img class='w-100pc' src= '$poster'  alt=''>";?>
                 </a>
             </div>
@@ -182,13 +181,12 @@ $_SESSION['title'] = $title_checkout;
     </section>
 
     <!-More Like->
-
     <section class="p-10 md-p-l5">
         <div id="slider-2">
             <div class="px-3 w-100pc md-w-25pc">
                 <div class="p-8 br-8 bg-yellow-lightest-10 relative">
-                    <p class="fw-600 fs-m3 yellow-lightest opacity-80 italic ls-wider "><?php
-                    $q= 'SELECT g_id,title FROM movie WHERE g_id = "'.$g_id.'" AND title !="'.$title.'"; ';
+                    <p class="fw-600 fs-m3 yellow-lightest opacity-80 italic ls-wider "> <?php
+                    $q= 'SELECT g_id,title FROM movie WHERE g_id = "'.$g_id.'" AND title !="'.$title.'"';
                     if($result=$mysqli->query($q)){
                       while($row=$result->fetch_array()){
                         echo '<option value="'.$row[0].'">'.$row[1].'</option>';
@@ -211,8 +209,7 @@ $_SESSION['title'] = $title_checkout;
                 <div class="white opacity-70 fs-s2 mt-4 md-pr-10">
                     <p>i smoke when i think too much about you, then i think too much about you when i smoke</p>
                     <br>
-                    <p>Soluta voluptate et optio. Eos quasi impedit sapiente aliquid eius eligendi at. Necessitatibus
-                        magni et sed quod quas minima.</p>
+                    <p>she looks perfect to you</p>
                 </div>
             </div>
             <div class="w-100pc md-w-50pc">

@@ -22,14 +22,14 @@
                 <h1 style="color:white(238, 220, 220);">SundayCandy</h1>
             </a>
             <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
-                class="flex items-center ml-auto md-hidden indigo-lighter opacity-50 hover-opacity-100 ease-300 p-1 m-3">
+                class="flex items-center ml-auto md-hidden yellow-lighter opacity-50 hover-opacity-100 ease-300 p-1 m-3">
                 <i data-feather="menu"></i>
             </a>
         </div>
         <div id="nav-items" class="hidden flex sm-w-100pc flex-column md-flex md-flex-row md-justify-end items-center">
-            <a href="addmovie.php" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">add</a>
-            <a href="editmovie.php" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">delete</a>
-            <a href="contact.php" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">contact</a>
+            <a href="addmovie.php" class="fs-s1 mx-3 py-3 yellow no-underline hover-underline">add</a>
+            <a href="editmovie.php" class="fs-s1 mx-3 py-3 yellow no-underline hover-underline">delete</a>
+            <a href="contact.php" class="fs-s1 mx-3 py-3 yellow no-underline hover-underline">contact</a>
         </div>
     </nav>
 
@@ -54,46 +54,46 @@
 
     <!Edit part>
     <section class="p-10 md-p-l5">
-        <div class="br-6 bg-indigo-lightest-10 p-5 md-p-l5 flex flex-wrap md-justify-between md-items-center">
+        <div class="br-6 bg-yellow-lightest-10 p-5 md-p-l5 flex flex-wrap md-justify-between md-items-center">
           <div class="w-100pc md-w-50pc p-l1"> <!movieID>
             <div class="white fw-600 fs-m1">Movie ID</div>
               <div class="flex my-5">
                 <?php echo "<input type='text' name='id' value=".$row['m_id']." Disabled
-                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
+                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-yellow-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
           <div class="w-100pc md-w-50pc p-l1"> <!movieName>
             <div class="white fw-600 fs-m1">Title</div>
               <div class="flex my-5">
                 <?php echo "<input type='text' name='time' value=".$row['title']."
-                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
+                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-yellow-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
           <div class="w-100pc md-w-50pc p-l1"> <!Rent Time>
             <div class="white fw-600 fs-m1">Rent time</div>
               <div class="flex my-5">
                 <?php echo "<input type='text' name='time' value=".$row['time']."
-                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
+                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-yellow-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
           <div class="w-100pc md-w-50pc p-l1"> <!Price Rent>
             <div class="white fw-600 fs-m1">Price for rent</div>
               <div class="flex my-5">
                 <?php echo "<input type='text' name='price_rent' value=".$row['price_rent']."
-                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
+                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-yellow-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
           <div class="w-100pc md-w-50pc p-l1"> <!Price Buy>
             <div class="white fw-600 fs-m1">Price for buy</div>
               <div class="flex my-5">
                 <?php echo "<input type='text' name='price_buy' value=".$row['price_buy']."
-                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
+                class= 'input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-yellow-lightest focus-white opacity-80 fs-s3 py-5 br-r-0 ph-slategray focus-ph-gray'>";?>
               </div>
           </div>
           <div class="w-100pc md-w-50pc p-l1"> <!Genres>
                 <div class="white fw-600 fs-m1">Genres</div>
               <div class="flex my-5">
-                <select name="g_id" class="input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 br-r-0">
+                <select name="g_id" class="input-lg flex-grow-1 bw-0 fw-200 bg-white black ph-yellow-lightest focus-white opacity-80 fs-s3 py-5 br-r-0">
                     <?php
                               // select the TITLE_ID and TITLE_NAME
                                 $q='SELECT g_id, g_name from genres;';
@@ -108,7 +108,7 @@
                   </select>
               </div>
           </div>
-          <input type=submit value=submit class="button-lg bg-indigo indigo-lightest fw-300 fs-s3 br-l-0">Edit
+          <a href ='editmovie.php?id=<?=$row['m_id']?>' class="button-lg bg-yellow yellow-lightest fw-300 fs-s3 br-l-0">Edit
           <?php
           $mysqli->close();
            } ?>
