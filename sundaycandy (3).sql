@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 15, 2020 at 08:42 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Host: 127.0.0.1
+-- Generation Time: Nov 21, 2020 at 06:29 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -98,8 +97,6 @@ INSERT INTO `movie` (`m_id`, `title`, `time`, `price_rent`, `price_buy`, `g_id`,
 (3, 'Green Book', 7, 50, 89, 5, NULL, 'images/GreenBook.jpg'),
 (4, 'Tenet', 7, 75, 125, 1, NULL, 'images/tenet.reg.ar_480x.progressive.jpg'),
 (5, 'Spotlight', 7, 50, 89, 4, NULL, 'images/Spotlight_480x.progressive.jpg'),
-(6, '1917', 7, 75, 125, 1, NULL, 'images/1917.125785.ar_480x.progressive.jpg'),
-(7, 'Parasite', 10, 75, 125, 4, NULL, 'images/Parasite.jpg'),
 (8, 'Handmaiden', 10, 50, 89, 2, NULL, 'images/Handmaiden.jpeg'),
 (9, 'The God Father', 7, 50, 89, 4, NULL, 'images/Godfather.jpg'),
 (10, 'Howl\'s Moving Castle', 10, 50, 89, 6, NULL, 'images/MovingCastle.jpg'),
@@ -134,7 +131,8 @@ INSERT INTO `orderinfo` (`order_id`, `price`, `date`, `user_id`, `m_id`) VALUES
 (19, '50', '2020-11-13', 3, 4),
 (20, '50', '2020-11-14', 7, 4),
 (21, '89', '2020-11-15', 1, 11),
-(22, '50', '2020-11-15', 7, 4);
+(22, '50', '2020-11-15', 7, 4),
+(23, '89', '2020-11-19', 7, 1);
 
 -- --------------------------------------------------------
 
@@ -163,7 +161,8 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `FName`, `LName`, `Email`
 (4, 'JKinna', '12345678', 'Joel', 'Kinnaman', 'alteredcarbon@gmail.com', '0907966523'),
 (5, 'gdrfg', 'fgdfgdfg', 'fioaejf', 'bthdthd', '259595', 'fdghfdg'),
 (6, '6122780099', '6ykiull', 'Popo', 'h', '55555', 'g'),
-(7, 'admin', '1234', 'mook', 'kie', '55555', 'g');
+(7, 'admin', '1234', 'mook', 'kie', '55555', 'g'),
+(8, 'rosesarerose', '1234', 'Rosanne', 'Park', '1122', 'roanne@eiei');
 
 --
 -- Indexes for dumped tables
@@ -218,19 +217,19 @@ ALTER TABLE `genres`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `orderinfo`
 --
 ALTER TABLE `orderinfo`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
