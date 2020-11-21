@@ -16,19 +16,19 @@
 <body class="bg-black muli">
     <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
         <div class="flex justify-between">
-            <a href="index.html" class="flex items-center p-2 mr-4 no-underline">
-                <img class="max-h-l2 w-auto" src="assets/images/logo.png" />
+            <a href="index_staff.html" class="flex items-center p-2 mr-4 no-underline">
+                <img class="max-h-l2 w-auto" src="../assets/images/logo.png" />
                 <h1 style="color:white(238, 220, 220);">SundayCandy</h1>
             </a>
             <a data-toggle="toggle-nav" data-target="#nav-items" href="#"
-                class="flex items-center ml-auto md-hidden indigo-lighter opacity-50 hover-opacity-100 ease-300 p-1 m-3">
+                class="flex items-center ml-auto md-hidden yellow-lighter opacity-50 hover-opacity-100 ease-300 p-1 m-3">
                 <i data-feather="menu"></i>
             </a>
         </div>
         <div id="nav-items" class="hidden flex sm-w-100pc flex-column md-flex md-flex-row md-justify-end items-center">
-            <a href="addmovie.php" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">add</a>
-            <a href="editmovie.php" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">delete</a>
-            <a href="contact.php" class="fs-s1 mx-3 py-3 indigo no-underline hover-underline">contact</a>
+            <a href="addmovie.php" class="fs-s1 mx-3 py-3 yellow no-underline hover-underline">add</a>
+            <a href="editmovie.php" class="fs-s1 mx-3 py-3 yellow no-underline hover-underline">delete</a>
+            <a href="contact.php" class="fs-s1 mx-3 py-3 yellow no-underline hover-underline">contact</a>
         </div>
     </nav>
 
@@ -43,7 +43,7 @@
     <!-- Contact List -->
 
     <section class="p-10 flex flex-wrap justify-center item-center">
-      <div class="br-6 bg-indigo-lightest-10 p-5 md-p-l5 flex flex-wrap white md-justify-between md-items-center">
+      <div class="br-6 bg-yellow-lightest-10 p-5 md-p-l5 flex flex-wrap white md-justify-between md-items-center">
       <table border='2'>
         <div class="w-100pc md-w-100pc lg-w-100pc">
         <div class="flex-equal fs-m1 fw-1000">

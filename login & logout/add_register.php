@@ -11,7 +11,7 @@ require_once('connect.php');
 
 
 $q="INSERT INTO user (FName,LName,Phone,Email,username,password)
-VALUES ('$first_name','$last_name','$email','$phone_number','$username','$passwd')";
+VALUES ('$first_name','$last_name','$phone_number','$email','$username','$passwd')";
 $result = $mysqli->query($q);
 if (!$result) {
 //die('Error: '.$q." ". $mysqli->error);
