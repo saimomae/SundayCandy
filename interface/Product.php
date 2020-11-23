@@ -140,7 +140,7 @@ $title_checkout = $_SESSION['title'];
                 <div class="m-3 p-5 br-8 bg-yellow-lightest-10 overflow-hidden">
                     <div class="p-3">
                         <h3 class="yellow">Buy</h3>
-                        <div class="white flex items-center">$<span class="fs-l5 lh-1"><?php echo $price_buy; ?></span></div>
+                        <div class="white flex items-center">฿<span class="fs-l5 lh-1"><?php echo $price_buy; ?></span></div>
                     </div>
                     <div class="p-3 yellow-lightest fw-400 fs-s1 lh-5">
                         <div>
@@ -157,7 +157,7 @@ $title_checkout = $_SESSION['title'];
                 <div class="m-3 p-5 br-8 bg-white overflow-hidden">
                     <div class="p-3">
                         <h3 class="yellow-dark">Rent</h3>
-                        <div class="black flex items-center">$<span class="fs-l5 lh-1"><?php echo $price_rent; ?></span></div>
+                        <div class="black flex items-center">฿<span class="fs-l5 lh-1"><?php echo $price_rent; ?></span></div>
                     </div>
                     <div class="p-3 black fw-400 fs-s1 lh-5">
                         <div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2020 at 06:29 PM
+-- Generation Time: Nov 23, 2020 at 07:34 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -20,6 +20,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `sundaycandy`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `showHistory` (IN `userID` INT(10))  BEGIN
+SELECT orderinfo.m_id, movie.m_id, title, price, date, user_id, order_id FROM orderinfo,movie
+            WHERE movie.m_id=orderinfo.m_id AND user_id = userID;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -132,7 +143,10 @@ INSERT INTO `orderinfo` (`order_id`, `price`, `date`, `user_id`, `m_id`) VALUES
 (20, '50', '2020-11-14', 7, 4),
 (21, '89', '2020-11-15', 1, 11),
 (22, '50', '2020-11-15', 7, 4),
-(23, '89', '2020-11-19', 7, 1);
+(23, '89', '2020-11-19', 7, 1),
+(24, '50', '2020-11-23', 9, 5),
+(25, '89', '2020-11-23', 9, 5),
+(26, '89', '2020-11-23', 9, 3);
 
 -- --------------------------------------------------------
 
@@ -162,7 +176,8 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `FName`, `LName`, `Email`
 (5, 'gdrfg', 'fgdfgdfg', 'fioaejf', 'bthdthd', '259595', 'fdghfdg'),
 (6, '6122780099', '6ykiull', 'Popo', 'h', '55555', 'g'),
 (7, 'admin', '1234', 'mook', 'kie', '55555', 'g'),
-(8, 'rosesarerose', '1234', 'Rosanne', 'Park', '1122', 'roanne@eiei');
+(8, 'rosesarerose', '1234', 'Rosanne', 'Park', '1122', 'roanne@eiei'),
+(9, 'mk', '1234', 'a', 'b', 'mkmmook@gmail.com', '1122');
 
 --
 -- Indexes for dumped tables
@@ -217,19 +232,19 @@ ALTER TABLE `genres`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `orderinfo`
 --
 ALTER TABLE `orderinfo`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
